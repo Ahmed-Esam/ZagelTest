@@ -1,0 +1,22 @@
+
+
+  <div class="storycontainerPosition">
+    <div class="container" style="position: relative;">
+    <div  class="swiper-container storyContainer" [swiper]="config1" >
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" *ngFor="let story of stories">
+          <div class="storyblockCircle">
+            <a href="{{story.DomainURL}}">
+               <img src="https://img.thezagelapp.com/{{story.ImgURl}}" alt="">
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="swiper-slide" *ngFor="let story of stories">
+        {{story.Title}}
+      </div> -->
+    </div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+</div>

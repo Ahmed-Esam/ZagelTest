@@ -1,0 +1,156 @@
+<div class="container">
+  <div class="rowFlex">
+    <div class="col-lg-8">
+      <div  *ngFor="let post of posts">
+        <!-- News Cards -->
+        <div class="newscardsBlock" *ngIf="post.ID != 0">
+          <a routerLink="news/{{post.ID}}" routerLinkActive="active">
+            <img src="https://img.thezagelapp.com/{{post.Img}}"  class="card-img-top" alt="..." title=""/>
+          </a>
+          <div class="card-body">
+            <div class="imgSource-icon d-flex justify-content-between">
+              <div class="imgSource">
+                <img style="width: 30px;" src="https://img.thezagelapp.com/img/source/{{post.SourceID}}.jpg"  alt="" title=""/>
+              </div>
+              <div class="card-icon">
+                <i class="fa fa-upload" aria-hidden="true"></i>
+                <i class="fa fa-comments" aria-hidden="true"></i>
+              </div>
+            </div>
+            <h3 class="card-title" [class]="post.TitleAlign">{{ post.Title }}</h3>
+          </div>
+        </div>
+
+        <div class="" *ngIf="post.ID == 0 && post.Type == 0">
+          <!-- Matches widjet -->
+          <div class="matchescardsBlock" *ngIf="post.MatchToDay !== null " style="height: 400px;overflow: hidden;">
+            <div class="rowFlex justify-content-between">
+              <p>زاجل سبورت</p>
+              <img src="assets/images/search-icon.png" alt="">
+            </div>
+            <div class="zagelsportCard" *ngFor="let match of post.MatchToDay">
+              <div class="rowFlex">
+                <div class="matcheswidjetCard">
+                  <img src="https://img.thezagelapp.com/{{match.HomeTeamLogo}}"  class="zagelsportImg" alt="..." title=""/>
+                  <p class="card-title C">{{match.HomeTeam}}</p>
+                </div>
+                <div class="matchedetailsCard">
+                  <p class="matchLeagueName">{{match.LeagueName}}</p>
+                  <p>{{today | date:'medium'}}</p>
+                  <div class="row cardtitleGoals">
+                    <p class="matchHomeGoals">{{match.HomeGoals}}</p>
+                    <p class="matchVS">VS</p>
+                    <p class="matchHomeGoals">{{match.AwayGoals}}</p>
+                  </div>
+                  <p class="MatchStatusName">{{match.MatchStatusName}}</p>
+                </div>
+                <div class="matcheswidjetCard">
+                  <img src="https://img.thezagelapp.com/{{match.AwayTeamLogo}}"  class="zagelsportImg" alt="..." title=""/>
+                  <p class="card-title C">{{match.AwayTeam}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Picks -->
+          <div class="pickscardsBlock" *ngIf="post.Picks !== null ">
+            <div class="rowFlex justify-content-between">
+              <p>مختارات زاجل</p>
+              <img src="assets/images/search-icon.png" alt="">
+            </div>
+            <div class="rowFlex">
+              <div  class="swiper-container picksContainer" [swiper]="config2" [(index)]="index">
+                <div class="swiper-wrapper">
+                  <div class="picksCard swiper-slide" *ngFor="let pick of post.Picks">
+                    <img src="https://img.thezagelapp.com/{{pick.Img}}"  class="card-img-top" alt="..." title=""/>
+                    <div class="cardPadding">
+                        <h3 [class]="pick.TitleAlign" TitleAlign>{{pick.Title}}</h3>
+                        <div class="rowFlex">
+                          <div class="pickBlockImg">
+                            <img src="https://img.thezagelapp.com/{{pick.Img}}" class="pickImg"  alt="" title=""/>
+                          </div>
+                          <p>{{pick.SourceTitle}}</p>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Prayer -->
+          <div class="prayercardsBlock" *ngIf="post.Prayer !== null ">
+              <div class="rowFlex justify-content-between">
+                <p>مواقيت الصلاة</p>
+                <img src="assets/images/search-icon.png" alt="">
+              </div>
+            <!-- <div class="rowFlex">
+              <div class="twoprayerBlocks prayerBlocks">
+                <div class="rowFlex">
+                  <p>الفجر</p>
+                  <i></i>
+                </div>
+                <p>{{post.Prayer.Fajr}}</p>
+              </div>
+              <div class="twoprayerBlocks prayerBlocks">
+                <div class="rowFlex">
+                  <p>المغرب</p>
+                  <i></i>
+                </div>
+                <p>{{post.Prayer.Maghrib}}</p>
+              </div>
+            </div> -->
+            <div class="rowFlex">
+              <div class="fourprayerBlocks prayerBlocks">
+                <p>الفجر</p>
+                <i></i>
+                <p>{{post.Prayer.Fajr}}</p>
+              </div>
+              <div class="fourprayerBlocks prayerBlocks">
+                <p>الشروق</p>
+                <i></i>
+                <p>{{post.Prayer.Sunrise}}</p>
+              </div>
+              <div class="fourprayerBlocks prayerBlocks">
+                <p>الظهر</p>
+                <i></i>
+                <p>{{post.Prayer.Dhuhr}}</p>
+              </div>
+              <div class="fourprayerBlocks prayerBlocks">
+                <p>العصر</p>
+                <i></i>
+                <p>{{post.Prayer.Asr}}</p>
+              </div>
+              <div class="fourprayerBlocks prayerBlocks">
+                <p>المغرب</p>
+                <i></i>
+                <p>{{post.Prayer.Maghrib}}</p>
+              </div>
+              <div class="fourprayerBlocks prayerBlocks">
+                <p>العشاء</p>
+                <i></i>
+                <p>{{post.Prayer.Isha}}</p>
+              </div>
+            </div>
+            <div class="rowFlex timeCity">
+              <p>{{post.Prayer.CityName}}</p>
+              <p>{{post.Prayer.Date}}</p>
+            </div>
+          </div>
+          <!-- RecommendedSource -->
+          <div *ngIf="post.RecommendedSource !== null ">
+            RecommendedSource
+
+          </div>
+          <!-- ads -->
+          <div *ngIf="post.UnitID !== null ">
+            {{post.UnitID}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <div class="col-lg-4" style="background:#fff; height: 500px;">
+        dddddddddddd
+      </div>
+  </div>
+</div>
+

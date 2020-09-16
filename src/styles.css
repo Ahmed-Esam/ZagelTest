@@ -1,1 +1,67 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import '~swiper/css/swiper.min.css';
+@font-face{font-family:cairolight;src:url(assets/fonts/Cairo-Light.ttf)}
+@font-face{font-family:cairoregular;src:url(assets/fonts/Cairo-Regular.ttf)}
+@font-face{font-family:cairobold;src:url(assets/fonts/Cairo-Bold.ttf)}
+
+*{direction: rtl;font-family:cairolight;}
+html, body { height: 100%; }
+body { margin: 0;background:#BBBBBC}
+.rowFlex{display: flex;flex-wrap: wrap;}
+.newscardsBlock{margin-bottom: 25px;border-radius: 20px;}
+.matchescardsBlock{margin-bottom: 25px;background:#F8F8F8;padding:10px;border-radius: 20px;}
+.pickscardsBlock{margin-bottom: 25px;background:#F8F8F8;padding:10px;border-radius: 20px;}
+.pickscardsBlock .picksCard{background: #fff;width: calc(50% - 1%); margin-left: 2%;;}
+.pickscardsBlock .picksCard:nth-child(2n + 0){margin-left: 0;}
+.prayercardsBlock{margin-bottom: 25px;background:#F8F8F8;padding:10px;border-radius: 20px;}
+.prayerBlocks{background:#fff;border-radius: 10px; margin-bottom: 10px;padding:8px 0}
+/* .twoprayerBlocks{width: calc(50% - 0.5%);margin-left: 1%;}
+.twoprayerBlocks:nth-child(2){margin-left: 0;} */
+.fourprayerBlocks{width:calc(16.8% - 1%);margin-left: 1%;}
+.fourprayerBlocks:nth-child(6){margin-left: 0;}
+.fourprayerBlocks p{text-align:center;}
+.timeCity p{width: 50%;}
+.timeCity p:nth-child(1){text-align:right;}
+.timeCity p:nth-child(2){text-align:left;}
+.card-body{background:rgba(255 ,255 ,255 );border-radius: 0 0 14px 14px;}
+.card{margin: 10px 0;border-radius: 14px;}
+.card-icon{color: rgba(187 ,187 ,188 )}
+.card-icon i:first-child{ margin-left:10px;}
+.card-icon i{font-size: 23px;}
+.imgSource{width: 30px;}
+.card-img-top{border-radius: 14px 14px 0px 0px;}
+.card-title{font-size: 14px;margin-top: 10px;}
+.card-title{font-family:cairobold!important;}
+.card-title.C, .C{text-align: center;}
+.card-title.R, .R{text-align: right;}
+.mat-h3, .mat-typography h3{margin-top: 15px;font-size: 17px;font-family:cairobold;}
+.cardPadding{padding:10px}
+.pickImg{width: 100%;    display: block;}
+.pickBlockImg{width: 30px; height: 30px; border-radius: 50px;border:1px solid #9c8686}
+/* header */
+header{height: 60px; background:#F5F5F5;width: 100%;display: block;}
+.headerBlock{padding:0 20px}
+.userIcon{background:#095EAB;width: 54px; height: 55px;border-radius: 27px;}
+.zagelmainLogo{display: block;width: calc(100% - 75px);text-align: center;}
+.zagelmainLogo img{margin-top: 12px;}
+.searchBlock{width: 20px;height: 20px;margin-top:18px}
+/* stories */
+.storycontainerPosition{position: relative; background: #fff;padding: 15px 0;margin-bottom: 25px;}
+.storycontainerPosition .swiper-button-next, .storycontainerPosition .swiper-button-prev {outline:none!important;}
+.storyContainer{width: 90%;margin: auto;}
+.storyblockCircle{ border-radius: 50px; padding:1px; background:#2699FB;}
+.storyblockCircle img{display: block; width: 100%;border-radius: 50px;}
+/* zagelsport */
+.zagelsportCard{border:1px solid #095EAB;border-radius: 14px;width: 95%;margin: 10px auto 10px auto;padding:5px}
+.zagelsportImg{max-width: 35px;display: block; margin:auto;}
+.matcheswidjetCard{width: 30%;padding-top:20px}
+.matchedetailsCard{width: 40%;    text-align: center;}
+.MatchStatusName{border:1px solid #095EAB;padding:5px;max-width: 100px;margin: auto!important;border-radius: 50px;}
+.cardtitleGoals{max-width: 120px;margin:auto;}
+.matchHomeGoals{font-size:1.5em;color:#095EAB;}
+.matchVS{font-size:1.5em;color:#095EAB;margin:0 12px}
+.matchLeagueName{font-size:1em;color:#095EAB;}
+
+
+/* footer */
+footer{height: 65px; background: #fff;position: fixed;bottom: 0;width: 100%; display: flex;align-items: center;    border-radius: 40px 40px 0px 0px;    z-index: 9;}
