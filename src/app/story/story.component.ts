@@ -52,7 +52,7 @@ export class StoryComponent implements OnInit {
   stories: any[];
   constructor(postsDetails: apiService) {
     postsDetails.getStories().subscribe( res => {
-      console.log(res);
+      // console.log(res);
         this.stories = res;
     },err => {
       console.log(err);

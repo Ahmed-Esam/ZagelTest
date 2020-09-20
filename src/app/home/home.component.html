@@ -23,12 +23,12 @@
 
         <div class="" *ngIf="post.ID == 0 && post.Type == 0">
           <!-- Matches widjet -->
-          <div class="matchescardsBlock" *ngIf="post.MatchToDay !== null " style="height: 400px;overflow: hidden;">
+          <div class="matchescardsBlock" *ngIf="post.MatchToDay !== null " >
             <div class="rowFlex justify-content-between">
               <p>زاجل سبورت</p>
               <img src="assets/images/search-icon.png" alt="">
             </div>
-            <div class="zagelsportCard" *ngFor="let match of post.MatchToDay">
+            <div class="zagelsportCard" id={{indexOfelement}} *ngFor="let match of post.MatchToDay ; let indexOfelement=index;">
               <div class="rowFlex">
                 <div class="matcheswidjetCard">
                   <img src="https://img.thezagelapp.com/{{match.HomeTeamLogo}}"  class="zagelsportImg" alt="..." title=""/>
@@ -36,13 +36,14 @@
                 </div>
                 <div class="matchedetailsCard">
                   <p class="matchLeagueName">{{match.LeagueName}}</p>
-                  <p>{{today | date:'medium'}}</p>
+                  <!-- <p>{{today | date:'medium'}}</p> -->
+                  {{match.MatchDate}}
                   <div class="row cardtitleGoals">
                     <p class="matchHomeGoals">{{match.HomeGoals}}</p>
                     <p class="matchVS">VS</p>
                     <p class="matchHomeGoals">{{match.AwayGoals}}</p>
                   </div>
-                  <p class="MatchStatusName">{{match.MatchStatusName}}</p>
+                  <p class="MatchStatusName">{{x}}</p>
                 </div>
                 <div class="matcheswidjetCard">
                   <img src="https://img.thezagelapp.com/{{match.AwayTeamLogo}}"  class="zagelsportImg" alt="..." title=""/>

@@ -14,7 +14,7 @@ export class ExploreComponent implements OnInit {
 
   constructor(postsDetails: apiService) {
     postsDetails.getExplorernews().subscribe( res => {
-      console.log(res);
+      // console.log(res);
         this.posts = res;
     },err => {
       console.log(err);
