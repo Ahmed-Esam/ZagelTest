@@ -43,7 +43,19 @@
                     <p class="matchVS">VS</p>
                     <p class="matchHomeGoals">{{match.AwayGoals}}</p>
                   </div>
-                  <p class="MatchStatusName">{{x}}</p>
+                  <!-- <div *ngIf="ahmed  else elseBlock">
+                    <p class="MatchStatusName" >{{EndMatch}}</p>
+                  </div>
+                  <ng-template #elseBlock>
+                    <p class="MatchStatusName" >{{StartMatch}}</p>
+                  </ng-template> -->
+
+                  <!-- <div *ngIf="ahmed ? EndMatch : StartMatch">
+                    <p class="MatchStatusName" >{{StartMatch}}</p>
+                  </div> -->
+                  <!-- <p class="MatchStatusName" >{{EndMatch}}</p> -->
+                  <p class="MatchStatusName">{{test2(match.MatchDate)}}</p>
+
                 </div>
                 <div class="matcheswidjetCard">
                   <img src="https://img.thezagelapp.com/{{match.AwayTeamLogo}}"  class="zagelsportImg" alt="..." title=""/>

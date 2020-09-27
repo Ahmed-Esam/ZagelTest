@@ -8,7 +8,7 @@ import * as moment from 'moment';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent {
+export class HomeComponent  implements OnInit  {
   config2: SwiperOptions = {
     direction: 'horizontal',
     slidesPerView: 2,
@@ -47,43 +47,47 @@ slidesPerView: 5
 posts: any[];
 MatchDate: any;
 dateeeee: any;
-today: number = Date.now();
-x : any;
+x : string;
+EndMatch : string;
+StartMatch  : string;
+EndMatchTest : boolean;
+StartMatchTest  : boolean;
 i : 0;
-iterator2:any;
+// iterator2:any;
+ahmed = [];
+arrTime :[];
+test:any;
 constructor(postsDetails: apiService) {
   postsDetails.getHomenews().subscribe( res => {
     //console.log(res);
       this.posts = res;
       this.MatchDate = res[1].MatchToDay;
+      console.log(this.MatchDate ,'ahmed');
 
-      // for (let iterator of this.MatchDate) {
-      //   this.dateeeee = iterator.MatchDate
-      //   //console.log(this.dateeeee, 'in loop');
-      // }
     },err => {
       console.log(err);
     })
   }
   // "MMMM Do YYYY, h:mm:ss a"
+  // 2020-09-20T12:15:26
 
-  ngDoCheck (): void {
+  test2(e){
+
     let now = moment().format('YYYY-MM-DDTHH:mm:ss');
-    //console.log(now, 'string');
-    //console.log(this.dateeeee, 'date')
 
-    for (let iterator2 of this.MatchDate) {
-      //console.log(iterator2)
-      //console.log(iterator2.MatchDate)
-      if(moment(now).isAfter(iterator2)){
-        //console.log(iterator2.MatchDate, 'date')
-        this.x = "انتهت"
-      }else {
-        //console.log('false')
-        //console.log(this.dateeeee, 'date')
-        this.x = "لم تبدا بعد"
-      }
+    if(moment(now).isAfter( `${e}`)){
+      console.log(e, 'End ')
+      return "انتهت"
+
+    }else  {
+      console.log(e, 'start')
+      return "لم تبدا بعد"
+
     }
   }
+  ngOnInit (){
+    // this.test2(e)
+  }
 
-}
+
+ }
