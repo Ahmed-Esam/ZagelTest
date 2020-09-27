@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { apiService } from 'src/app/services/api.service';
 
 @Component({
@@ -8,21 +9,39 @@ import { apiService } from 'src/app/services/api.service';
 })
 export class NewsComponent implements OnInit {
 
-  article: {};
+  articles: any;
+  news: any;
   // today: number = Date.now();
 
 
-  constructor(postsDetails: apiService) {
-    postsDetails.getArticle().subscribe( res => {
-      console.log(res);
-        this.article = res;
-    },err => {
-      console.log(err);
-    })
+  constructor(private postsDetails: apiService,private route: ActivatedRoute) {
+    // postsDetails.getArticle().subscribe( res => {
+    //   console.log(res);
+    //     this.articles = res;
+    // },err => {
+    //   console.log(err);
+    // })
 
     }
 
+  paramId;
+  IntializeId(){
+    this.route.paramMap.subscribe(params => {
+      this.paramId = params.get('id')
+      console.log(this.paramId)
+    });
+  }
+  fetchApitest(id){
+    return this.articles = this.postsDetails.getArticle(id).subscribe((res:any) =>{
+      this.news = res
+      console.log(this.news)
+      // console.log(this.news)
+    })
+  }
+
   ngOnInit(): void {
+    this.IntializeId()
+    this.fetchApitest(this.paramId)
   }
 
 }

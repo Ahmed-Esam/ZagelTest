@@ -19,9 +19,9 @@ export class apiService {
       return this.http.get('http://apiversion10.thezagelapp.com/api/News/GetNewsHomebyuser/6225/0/0/20/0', { headers });
     }
 
-    getArticle() :Observable<any>{
+    getArticle(id) :Observable<any>{
       const headers = { 'Content-type':'application/json', 'DeviceToken':'62447fb2f241da48', 'AuthToken':'AKQi8yzdDa' }
-      return this.http.get('http://apiversion10.thezagelapp.com/api/News/Details/6225/7749426', { headers });
+      return this.http.get(`http://apiversion10.thezagelapp.com/api/News/Details/6225/${id}`, { headers });
     }
 
     getExplorernews() :Observable<any>{
