@@ -57,7 +57,7 @@ header{height: 60px; background:#F5F5F5;width: 100%;display: block;}
 .matcheswidjetCard{width: 30%;padding-top:20px}
 .matchedetailsCard{width: 40%;    text-align: center;}
 .MatchStatusName{border:1px solid #095EAB;padding:5px;max-width: 100px;margin: auto!important;border-radius: 50px;}
-.cardtitleGoals{max-width: 120px;margin:auto;}
+.cardtitleGoals{max-width: 120px;margin:auto;justify-content: space-between;margin-top: 10px;}
 .matchHomeGoals{font-size:1.5em;color:#095EAB;}
 .matchVS{font-size:1.5em;color:#095EAB;margin:0 12px}
 .matchLeagueName{font-size:1em;color:#095EAB;}
