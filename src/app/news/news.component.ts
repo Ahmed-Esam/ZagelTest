@@ -34,7 +34,7 @@ export class NewsComponent implements OnInit {
   fetchApitest(id){
     return this.articles = this.postsDetails.getArticle(id).subscribe((res:any) =>{
       this.news = res
-      console.log(this.news)
+      console.log(this.news.Breif , "sss")
       // console.log(this.news)
     })
   }

@@ -62,6 +62,12 @@ header{height: 60px; background:#F5F5F5;width: 100%;display: block;}
 .matchVS{font-size:1.5em;color:#095EAB;margin:0 12px}
 .matchLeagueName{font-size:1em;color:#095EAB;}
 
-
+/* News  */
+.NewsImg{width: 100%;display: block;}
+.Source-Topic{display:flex;justify-content:space-between;width:100%;padding:10px 20px;}
+.Source-date{display:flex;text-align:right;align-items:center}
+.img-Source{width: 80px;margin-left: 10px;}
+.Title-Date p:last-child{margin:0;}
+.Topic-Name span{margin-left: 6px;}
 /* footer */
 footer{height: 65px; background: #fff;position: fixed;bottom: 0;width: 100%; display: flex;align-items: center;    border-radius: 40px 40px 0px 0px;    z-index: 9;}

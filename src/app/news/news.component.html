@@ -8,7 +8,28 @@
 
 <div class="container">
   <div class="row">
-ssssssssssss
+     <div class="Image-news w-100">
+      <img src="https://img.thezagelapp.com/{{news.Img}}"  class="NewsImg" alt="..." title="">
+     </div>
+     <div class="Source-Topic">
+        <div class="Source-date">
+          <img class="img-Source" src="https://img.thezagelapp.com/img/source/{{news.SourceID}}.jpg">
+          <div class="Title-Date">
+            <p>{{news.SourceTitle}}</p>
+            <p>{{news.FormatedDate}}</p>
+          </div>
+        </div>
+        <div class="Topic-Name">
+          <span>{{news.SectionTitle}}</span>
+          <i class="fa fa-heart" aria-hidden="true"></i>
+        </div>
+     </div>
+
+  </div>
+  <div class="row">
+    <p>
+      {{news.Breif}}
+    </p>
   </div>
 </div>
 

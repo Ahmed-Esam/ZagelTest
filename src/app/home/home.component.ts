@@ -77,11 +77,11 @@ constructor(postsDetails: apiService) {
     let now = moment().format('YYYY-MM-DDTHH:mm:ss');
 
     if(moment(now).isAfter( `${e}`)){
-      console.log(e, 'End ')
+      // console.log(e, 'End ')
       return "انتهت"
 
     }else  {
-      console.log(e, 'start')
+      // console.log(e, 'start')
       return "لم تبدا بعد"
 
     }
