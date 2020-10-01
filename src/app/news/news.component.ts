@@ -39,7 +39,7 @@ export class NewsComponent implements OnInit {
       this.Details = this.news.Details;
       console.log(this.Details)
       // console.log(this.news , "sss")
-      // console.log(this.Details)
+
     })
   }
 
