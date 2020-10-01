@@ -11,6 +11,8 @@ export class NewsComponent implements OnInit {
 
   articles: any;
   news: any;
+  Details:any;
+  DetailsElement:any;
   // today: number = Date.now();
 
 
@@ -33,9 +35,11 @@ export class NewsComponent implements OnInit {
   }
   fetchApitest(id){
     return this.articles = this.postsDetails.getArticle(id).subscribe((res:any) =>{
-      this.news = res
-      console.log(this.news.Breif , "sss")
-      // console.log(this.news)
+      this.news = res;
+      this.Details = this.news.Details;
+      console.log(this.Details)
+      // console.log(this.news , "sss")
+      // console.log(this.Details)
     })
   }
 

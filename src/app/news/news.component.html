@@ -27,10 +27,29 @@
 
   </div>
   <div class="row">
-    <p>
-      {{news.Breif}}
-    </p>
+    <div  *ngFor="let item of Details">
+     <div  *ngIf="item.Type === 'Text'">
+        <p>{{item.Text}}</p>
+     </div>
+     <div  *ngIf="item.Type === 'Video'" >
+      <div [innerHTML]="item.Text">
+
+      </div>
+    </div>
+     <div  *ngIf="item.Type === 'Image'">
+      <img src="https://img.thezagelapp.com/{{item.Text}}">
+    </div>
+      <!-- <p *ngIf="item.Type === 'Image'" [innerHTML]="item.Text">
+          <img [src]="item.Text">
+        </p> -->
+        <!-- {{item.Text}} -->
+      <!-- <iframe *ngIf="item.Type === 'Video'" [innerHTML]="item.Text"  [src]="item.Text" title="W3Schools Free Online Web Tutorials"></iframe> -->
+
+    </div>
   </div>
+
 </div>
 
 <!-- [innerHTML]="news.content[0].content" -->
+
+<!-- [innerHTML]="Details" -->
