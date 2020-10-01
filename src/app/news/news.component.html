@@ -32,9 +32,7 @@
         <p>{{item.Text}}</p>
      </div>
      <div  *ngIf="item.Type === 'Video'" >
-      <div [innerHTML]="item.Text">
 
-      </div>
     </div>
      <div  *ngIf="item.Type === 'Image'">
       <img src="https://img.thezagelapp.com/{{item.Text}}">
