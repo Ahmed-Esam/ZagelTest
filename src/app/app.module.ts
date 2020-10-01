@@ -13,6 +13,7 @@ import { SwiperModule } from 'ngx-swiper-wrapper';
 import { FooterComponent } from './footer/footer.component';
 import { ExploreComponent } from './explore/explore.component';
 import { NewsComponent } from './news/news.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { NewsComponent } from './news/news.component';
     StoryComponent,
     FooterComponent,
     ExploreComponent,
-    NewsComponent
+    NewsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
