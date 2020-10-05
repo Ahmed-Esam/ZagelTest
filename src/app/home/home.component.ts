@@ -62,7 +62,8 @@ constructor(postsDetails: apiService) {
     //console.log(res);
       this.posts = res;
       this.MatchDate = res[1].MatchToDay;
-      console.log(this.MatchDate ,'ahmed');
+      console.log('object :>> ', this.posts);
+      // console.log(this.MatchDate ,'ahmed');
 
     },err => {
       console.log(err);

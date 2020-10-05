@@ -28,5 +28,15 @@ export class apiService {
        return this.http.get('http://apiversion10.thezagelapp.com/api/News/GetNewsHome/6225/0/0/20/0');
     }
 
+    getPostQuare() {
+      return this.http.get('http://api.postquare.com/rec-api/getrecs.json?pubid=191402&webid=195147&wid=125552&url=http://www.thezagelapp.com/')
+    }
+
+    getJubna() {
+      return this.http.get('https://jubna.com/en/api/trends/9888?api_key=b092f2e7-963cbc6c-34da8e7c-2a6dcc38&widget_id=20007')
+    }
+
+
+
 
 }

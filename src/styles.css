@@ -69,5 +69,8 @@ header{height: 60px; background:#F5F5F5;width: 100%;display: block;}
 .img-Source{width: 80px;margin-left: 10px;}
 .Title-Date p:last-child{margin:0;}
 .Topic-Name span{margin-left: 6px;}
+.ZagelGeneral{margin: 10px 0;}
+.Post-Quare{margin-bottom: 25px;background:#F8F8F8;padding:10px;border-radius: 20px;}
+
 /* footer */
 footer{height: 65px; background: #fff;position: fixed;bottom: 0;width: 100%; display: flex;align-items: center;    border-radius: 40px 40px 0px 0px;    z-index: 9;}

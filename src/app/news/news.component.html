@@ -27,21 +27,148 @@
 
   </div>
   <div class="row">
-    <div  *ngFor="let item of Details">
+    <div  *ngFor="let item of Details" class="col-md-12">
      <div  *ngIf="item.Type === 'Text'">
         <p>{{item.Text}}</p>
      </div>
      <div  *ngIf="item.Type === 'Video'" >
+      <span>{{item.Text}}</span>
     </div>
      <div  *ngIf="item.Type === 'Image'">
       <img src="https://img.thezagelapp.com/{{item.Text}}">
     </div>
-      <!-- <p *ngIf="item.Type === 'Image'" [innerHTML]="item.Text">
-          <img [src]="item.Text">
-        </p> -->
-        <!-- {{item.Text}} -->
-      <!-- <iframe *ngIf="item.Type === 'Video'" [innerHTML]="item.Text"  [src]="item.Text" title="W3Schools Free Online Web Tutorials"></iframe> -->
+    </div>
+  </div>
 
+  <div class="row">
+    <div class="ZagelGeneral col-md-12" *ngFor="let item of ZagelGeneral">
+      <div class="" *ngIf="item.ID == 0 && item.Type == 0">
+        <!-- Matches widjet -->
+        <div class="matchescardsBlock" *ngIf="item.MatchToDay !== null " >
+          <div class="rowFlex justify-content-between">
+            <p>زاجل سبورت</p>
+            <img src="assets/images/search-icon.png" alt="">
+          </div>
+          <div class="zagelsportCard" id={{indexOfelement}} *ngFor="let match of item.MatchToDay ; let indexOfelement=index;">
+            <div class="rowFlex">
+              <div class="matcheswidjetCard">
+                <img src="https://img.thezagelapp.com/{{match.HomeTeamLogo}}"  class="zagelsportImg" alt="..." title=""/>
+                <p class="card-title C">{{match.HomeTeam}}</p>
+              </div>
+              <div class="matchedetailsCard">
+                <p class="matchLeagueName">{{match.LeagueName}}</p>
+                <!-- <p>{{today | date:'medium'}}</p> -->
+                {{match.MatchDate}}
+                <div class="row cardtitleGoals">
+                  <p class="matchHomeGoals">{{match.HomeGoals}}</p>
+                  <p class="matchVS">VS</p>
+                  <p class="matchHomeGoals">{{match.AwayGoals}}</p>
+                </div>
+
+                <p class="MatchStatusName">{{test2(match.MatchDate)}}</p>
+
+              </div>
+              <div class="matcheswidjetCard">
+                <img src="https://img.thezagelapp.com/{{match.AwayTeamLogo}}"  class="zagelsportImg" alt="..." title=""/>
+                <p class="card-title C">{{match.AwayTeam}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Picks -->
+        <div class="pickscardsBlock" *ngIf="item.Picks !== null ">
+          <div class="rowFlex justify-content-between">
+            <p>مختارات زاجل</p>
+            <img src="assets/images/search-icon.png" alt="">
+          </div>
+          <div class="rowFlex">
+            <div  class="swiper-container picksContainer" [swiper]="config2" [(index)]="index">
+              <div class="swiper-wrapper">
+                <div class="picksCard swiper-slide" *ngFor="let pick of item.Picks">
+                  <img src="https://img.thezagelapp.com/{{pick.Img}}"  class="card-img-top" alt="..." title=""/>
+                  <div class="cardPadding">
+                      <h3 [class]="pick.TitleAlign" TitleAlign>{{pick.Title}}</h3>
+                      <div class="rowFlex">
+                        <div class="pickBlockImg">
+                          <img src="https://img.thezagelapp.com/{{pick.Img}}" class="pickImg"  alt="" title=""/>
+                        </div>
+                        <p>{{pick.SourceTitle}}</p>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Prayer -->
+        <div class="prayercardsBlock" *ngIf="item.Prayer !== null ">
+            <div class="rowFlex justify-content-between">
+              <p>مواقيت الصلاة</p>
+              <img src="assets/images/search-icon.png" alt="">
+            </div>
+          <div class="rowFlex">
+            <div class="fourprayerBlocks prayerBlocks">
+              <p>الفجر</p>
+              <i></i>
+              <p>{{item.Prayer.Fajr}}</p>
+            </div>
+            <div class="fourprayerBlocks prayerBlocks">
+              <p>الشروق</p>
+              <i></i>
+              <p>{{item.Prayer.Sunrise}}</p>
+            </div>
+            <div class="fourprayerBlocks prayerBlocks">
+              <p>الظهر</p>
+              <i></i>
+              <p>{{item.Prayer.Dhuhr}}</p>
+            </div>
+            <div class="fourprayerBlocks prayerBlocks">
+              <p>العصر</p>
+              <i></i>
+              <p>{{item.Prayer.Asr}}</p>
+            </div>
+            <div class="fourprayerBlocks prayerBlocks">
+              <p>المغرب</p>
+              <i></i>
+              <p>{{item.Prayer.Maghrib}}</p>
+            </div>
+            <div class="fourprayerBlocks prayerBlocks">
+              <p>العشاء</p>
+              <i></i>
+              <p>{{item.Prayer.Isha}}</p>
+            </div>
+          </div>
+          <div class="rowFlex timeCity">
+            <p>{{item.Prayer.CityName}}</p>
+            <p>{{item.Prayer.Date}}</p>
+          </div>
+        </div>
+        <!-- RecommendedSource -->
+        <div *ngIf="item.RecommendedSource !== null ">
+          RecommendedSource
+
+        </div>
+        <!-- ads -->
+        <div *ngIf="item.UnitID !== null ">
+          {{item.UnitID}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="Post-Quare  col-md-12">
+      <h2 class="text-right">مقترحات قد تعجبك</h2>
+      <div  class="swiper-container picksContainer" [swiper]="config3">
+        <div class="swiper-wrapper">
+          <div class="picksCard swiper-slide" *ngFor="let item of PostQuareAds.recs">
+            <img src="https:{{item.thumbnail_path}}"  class="card-img-top" alt="..." title=""/>
+            <div class="cardPadding">
+                <h3 class="text-right">{{item.title}}</h3>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
