@@ -65,7 +65,7 @@
                   <p class="matchHomeGoals">{{match.AwayGoals}}</p>
                 </div>
 
-                <p class="MatchStatusName">{{test2(match.MatchDate)}}</p>
+                <p class="MatchStatusName">{{(match.MatchDate)}}</p>
 
               </div>
               <div class="matcheswidjetCard">
@@ -82,7 +82,7 @@
             <img src="assets/images/search-icon.png" alt="">
           </div>
           <div class="rowFlex">
-            <div  class="swiper-container picksContainer" [swiper]="config2" [(index)]="index">
+            <div  class="swiper-container picksContainer" [swiper]="config2" >
               <div class="swiper-wrapper">
                 <div class="picksCard swiper-slide" *ngFor="let pick of item.Picks">
                   <img src="https://img.thezagelapp.com/{{pick.Img}}"  class="card-img-top" alt="..." title=""/>
@@ -162,9 +162,27 @@
       <div  class="swiper-container picksContainer" [swiper]="config3">
         <div class="swiper-wrapper">
           <div class="picksCard swiper-slide" *ngFor="let item of PostQuareAds.recs">
-            <img src="https:{{item.thumbnail_path}}"  class="card-img-top" alt="..." title=""/>
+            <a  routerLink='{{item.clickUrl}}' target="_blank">
+              <img src="https:{{item.thumbnail_path}}"  class="card-img-top" alt="..." title=""/>
+              <div class="cardPadding">
+                  <h3 class="text-right">{{item.title}}</h3>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="Post-Quare  col-md-12">
+      <h2 class="text-right">مقترحات قد تعجبك</h2>
+      <div  class="swiper-container picksContainer" [swiper]="config4">
+        <div class="swiper-wrapper">
+          <div class="picksCard swiper-slide" *ngFor="let item of getJubnaArray">
+            <img src="{{item.image}}"  class="card-img-top" alt="..." title=""/>
             <div class="cardPadding">
-                <h3 class="text-right">{{item.title}}</h3>
+                <h3 class="text-right">{{item.headline}}</h3>
             </div>
           </div>
         </div>
