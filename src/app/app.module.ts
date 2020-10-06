@@ -15,6 +15,9 @@ import { ExploreComponent } from './explore/explore.component';
 import { NewsComponent } from './news/news.component';
 import { LoginComponent } from './login/login.component';
 
+import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
+import { GoogleLoginProvider, FacebookLoginProvider} from 'angularx-social-login';
+
 
 @NgModule({
   declarations: [
@@ -33,10 +36,28 @@ import { LoginComponent } from './login/login.component';
     AppRoutingModule,
     MatTabsModule,
     BrowserAnimationsModule,
-    SwiperModule
+    SwiperModule,
+    SocialLoginModule
   ],
   providers: [
-
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              '1054070388057-f84dsteh0p8tmk2r1roro5lvmmt8e9bc.apps.googleusercontent.com'
+            ),
+          },
+          {
+            id: FacebookLoginProvider.PROVIDER_ID,
+            provider: new FacebookLoginProvider('196361861052335'),
+          }
+        ],
+      } as SocialAuthServiceConfig,
+    }
   ],
   bootstrap: [AppComponent]
 })
