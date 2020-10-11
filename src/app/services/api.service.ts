@@ -36,10 +36,17 @@ export class apiService {
       return this.http.get('https://jubna.com/en/api/trends/9888?api_key=b092f2e7-963cbc6c-34da8e7c-2a6dcc38&widget_id=20007')
     }
 
-    getgoogleAccount() {
+    getgoogleAccount(Loginemail) {
       const headers = { 'Content-type':'application/json' }
-      const body = {Email:'m7moud7z@gmail.com',Password:'',DeviceType:'',DeviceToken:''};
+      const body = {Email:`${Loginemail}`,Password:'',DeviceType:'',DeviceToken:''};
+      // const body = {Email:'sssssssssss',Password:'',DeviceType:'',DeviceToken:''};
       return this.http.post<any>('http://apitest.thezagelapp.com/api/Member/login',body, { headers })
+    }
+
+    getRegestertion(email,Google, user_id) {
+      const headers = { 'Content-type':'application/json' }
+      const body = {Email:`${email}`,Password:'',DeviceType:'',DeviceToken:'',RegistrationType:`${Google}`,SocialId:`${user_id}`};
+      return this.http.post<any>('http://apitest.thezagelapp.com/api/Member/Registration',body, { headers })
     }
 
 }

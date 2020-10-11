@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import { apiService } from 'src/app/services/api.service';
 import { SocialAuthService } from "angularx-social-login";
 import { FacebookLoginProvider, GoogleLoginProvider } from "angularx-social-login";
@@ -10,13 +11,14 @@ import { SocialUser } from "angularx-social-login";
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
   user: SocialUser;
   loggedIn: boolean;
   Details:any;
-  constructor(private authService: SocialAuthService, private accountDetails: apiService) {
-
-   }
+  RegestertionNew:any
+  returnUrl: string;
+   emailRegtest:any;
+   IdRegtest:any;
+  constructor(private authService: SocialAuthService, private accountDetails: apiService, private router: Router,) {}
 
   ngOnInit() {
     this.authService.authState.subscribe((user) => {
@@ -25,20 +27,44 @@ export class LoginComponent implements OnInit {
     });
     //this.requestPost();
   }
-  requestPost(): void{
-    this.accountDetails.getgoogleAccount().subscribe( res => {
-      this.Details = res;
-      console.log('x');
-    },err => {
-      console.log(err);
+  Regestertion(emailRegtest,Google, IdRegtest): void{
+    this.accountDetails.getRegestertion(emailRegtest,'Google',IdRegtest).subscribe( res => {
+      this.RegestertionNew = res;
+
+      console.log(this.Details.MemberID , 'Regestertion');
+
+    },error => {
+      console.log(error.Message,'Regestertion');
     })
   }
+
+  requestPost(Loginemail,email,Google, user_id): void{
+    this.accountDetails.getgoogleAccount(Loginemail).subscribe( res => {
+      this.Details = res;
+
+      console.log(this.Details.MemberID , 'login');
+    },err => {
+      this.Regestertion(this.emailRegtest,"Google", this.IdRegtest)
+    })
+  }
+
   signInWithGoogle(): void {
+
+    //let self = this;
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID).then(
-      () => {
-        x => console.log(x)
-        this.requestPost();
+      // function(x){
+      //   console.log(x)
+      //   self.requestPost()
+      // }
+
+      (x) => {
+        this.emailRegtest = x.email;
+        this.IdRegtest = x.id;
+        this.requestPost(x.email,x.email,"Google", x.id)
+        //this.router.navigateByUrl('/');
+        // console.log(x)
       })
+
   }
 
   signInWithFB(): void {

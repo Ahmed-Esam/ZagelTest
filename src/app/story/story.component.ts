@@ -20,7 +20,7 @@ export class StoryComponent implements OnInit {
             roundLengths: true,
             slidesOffsetBefore: 0,
             slidesOffsetAfter: 0,
-            spaceBetween: 10,
+            spaceBetween: 5,
             observer:true,
     autoplay: {
       delay: 6000,
@@ -32,7 +32,7 @@ export class StoryComponent implements OnInit {
     },
     breakpoints: {
       1024: {
-        slidesPerView: 13
+        slidesPerView: 17
       },
       900: {
         slidesPerView: 8

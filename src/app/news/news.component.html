@@ -27,8 +27,8 @@
 
   </div>
   <div class="row">
-    <div  *ngFor="let item of Details" class="col-md-12">
-     <div  *ngIf="item.Type === 'Text'">
+    <div  *ngFor="let item of Details" class="col-md-12 contentBlock">
+     <div  *ngIf="item.Type === 'Text'" class="contentBlockText">
         <p>{{item.Text}}</p>
      </div>
      <div  *ngIf="item.Type === 'Video'" >
