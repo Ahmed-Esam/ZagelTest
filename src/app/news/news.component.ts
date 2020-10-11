@@ -150,7 +150,6 @@ slidesPerView: 1
       this.ZagelGeneral = this.news.ZagelGeneral
       // console.log(this.Details)
       // console.log(this.ZagelGeneral , "sss")
-
     })
   }
 

@@ -4,6 +4,7 @@ import { apiService } from 'src/app/services/api.service';
 import { SocialAuthService } from "angularx-social-login";
 import { FacebookLoginProvider, GoogleLoginProvider } from "angularx-social-login";
 import { SocialUser } from "angularx-social-login";
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-login',
@@ -16,9 +17,13 @@ export class LoginComponent implements OnInit {
   Details:any;
   RegestertionNew:any
   returnUrl: string;
-   emailRegtest:any;
-   IdRegtest:any;
-  constructor(private authService: SocialAuthService, private accountDetails: apiService, private router: Router,) {}
+  emailRegtest:any;
+  IdRegtest:any;
+  cookieValue:any;
+  constructor(private authService: SocialAuthService,
+    private accountDetails: apiService,
+    private router: Router,
+    private cookieService: CookieService) {}
 
   ngOnInit() {
     this.authService.authState.subscribe((user) => {
@@ -31,6 +36,7 @@ export class LoginComponent implements OnInit {
     this.accountDetails.getRegestertion(emailRegtest,'Google',IdRegtest).subscribe( res => {
       this.RegestertionNew = res;
 
+      console.log(this.Details.AuthToken , 'AuthToken');
       console.log(this.Details.MemberID , 'Regestertion');
 
     },error => {
@@ -41,7 +47,7 @@ export class LoginComponent implements OnInit {
   requestPost(Loginemail,email,Google, user_id): void{
     this.accountDetails.getgoogleAccount(Loginemail).subscribe( res => {
       this.Details = res;
-
+      console.log(this.Details.AuthToken , 'AuthToken');
       console.log(this.Details.MemberID , 'login');
     },err => {
       this.Regestertion(this.emailRegtest,"Google", this.IdRegtest)
