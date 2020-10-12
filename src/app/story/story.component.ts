@@ -54,6 +54,7 @@ export class StoryComponent implements OnInit {
     postsDetails.getStories().subscribe( res => {
       // console.log(res);
         this.stories = res;
+        console.log('object :>> ', this.stories);
     },err => {
       console.log(err);
     })

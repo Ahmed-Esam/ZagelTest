@@ -57,12 +57,16 @@ i : 0;
 ahmed = [];
 arrTime :[];
 test:any;
+UserID:Number = 3574
+Source:Number = 0;
+Section:Number = 0
+
 constructor(postsDetails: apiService) {
   postsDetails.getHomenews().subscribe( res => {
     //console.log(res);
       this.posts = res;
       this.MatchDate = res[1].MatchToDay;
-      console.log('object :>> ', this.posts);
+      console.log('object :>> ', this.posts,this.Source);
       // console.log(this.MatchDate ,'ahmed');
 
     },err => {
@@ -87,6 +91,11 @@ constructor(postsDetails: apiService) {
 
     }
   }
+
+  // clickme(e){
+  //   this.SourceID = e;
+  //   console.log(this.SourceID)
+  // }
   ngOnInit (){
     // this.test2(e)
   }

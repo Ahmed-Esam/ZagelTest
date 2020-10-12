@@ -1,7 +1,7 @@
 <div class="container">
   <div class="rowFlex">
     <div class="col-lg-8">
-      <div  *ngFor="let post of posts">
+      <div  *ngFor="let post of news">
         <!-- News Cards -->
         <div class="newscardsBlock" *ngIf="post.ID != 0">
           <img src="https://img.thezagelapp.com/{{post.Img}}"  class="card-img-top" alt="..." title=""/>
@@ -58,7 +58,7 @@
               <img src="assets/images/search-icon.png" alt="">
             </div>
             <div class="rowFlex">
-              <div  class="swiper-container picksContainer" [swiper]="config2">
+              <div  class="swiper-container picksContainer" [swiper]="config2" >
                 <div class="swiper-wrapper">
                   <div class="picksCard swiper-slide" *ngFor="let pick of post.Picks">
                     <img src="https://img.thezagelapp.com/{{pick.Img}}"  class="card-img-top" alt="..." title=""/>

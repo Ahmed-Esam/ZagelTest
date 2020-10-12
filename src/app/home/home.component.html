@@ -9,9 +9,11 @@
           </a>
           <div class="card-body">
             <div class="imgSource-icon d-flex justify-content-between">
-              <div class="imgSource">
-                <img style="width: 30px;" src="https://img.thezagelapp.com/img/source/{{post.SourceID}}.jpg"  alt="" title=""/>
-              </div>
+              <a >
+                <div class="imgSource">
+                  <img style="width: 30px;" src="https://img.thezagelapp.com/img/source/{{post.SourceID}}.jpg"  alt="" title=""/>
+                </div>
+              </a>
               <div class="card-icon">
                 <i class="fa fa-upload" aria-hidden="true"></i>
                 <i class="fa fa-comments" aria-hidden="true"></i>
@@ -71,7 +73,7 @@
               <img src="assets/images/search-icon.png" alt="">
             </div>
             <div class="rowFlex">
-              <div  class="swiper-container picksContainer" [swiper]="config2" [(index)]="index">
+              <div  class="swiper-container picksContainer" [swiper]="config2">
                 <div class="swiper-wrapper">
                   <div class="picksCard swiper-slide" *ngFor="let pick of post.Picks">
                     <img src="https://img.thezagelapp.com/{{pick.Img}}"  class="card-img-top" alt="..." title=""/>

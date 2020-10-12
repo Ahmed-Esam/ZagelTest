@@ -17,6 +17,7 @@ import { LoginComponent } from './login/login.component';
 
 import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
 import { GoogleLoginProvider, FacebookLoginProvider} from 'angularx-social-login';
+import { SourceComponent } from './source/source.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { GoogleLoginProvider, FacebookLoginProvider} from 'angularx-social-login
     FooterComponent,
     ExploreComponent,
     NewsComponent,
-    LoginComponent
+    LoginComponent,
+    SourceComponent
   ],
   imports: [
     BrowserModule,
