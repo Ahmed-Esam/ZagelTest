@@ -17,7 +17,11 @@ import { LoginComponent } from './login/login.component';
 
 import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
 import { GoogleLoginProvider, FacebookLoginProvider} from 'angularx-social-login';
+<<<<<<< HEAD
 import { SourceComponent } from './source/source.component';
+=======
+import { CookieService } from 'ngx-cookie-service';
+>>>>>>> 9d5643704f4d50b25469fac2499f551735324710
 
 
 @NgModule({
@@ -42,6 +46,7 @@ import { SourceComponent } from './source/source.component';
     SocialLoginModule
   ],
   providers: [
+    CookieService ,
     {
       provide: 'SocialAuthServiceConfig',
       useValue: {
