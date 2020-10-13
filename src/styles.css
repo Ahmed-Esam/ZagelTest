@@ -7,6 +7,8 @@
 *{direction: rtl;font-family:cairolight;}
 html, body { height: 100%; }
 body { margin: 0;background:#BBBBBC}
+a{text-decoration: none!important;}
+ul{list-style: none;}
 .rowFlex{display: flex;flex-wrap: wrap;}
 .newscardsBlock{margin-bottom: 25px;border-radius: 20px;}
 .matchescardsBlock{margin-bottom: 25px;background:#F8F8F8;padding:10px;border-radius: 20px;}
@@ -34,7 +36,7 @@ body { margin: 0;background:#BBBBBC}
 .card-title{font-family:cairobold!important;}
 .card-title.C, .C{text-align: center;}
 .card-title.R, .R{text-align: right;}
-.mat-h3, .mat-typography h3{margin-top: 15px;font-size: 17px;font-family:cairobold;}
+.mat-h3, .mat-typography h3 a{margin-top: 15px;font-size: 17px;font-family:cairobold;color: #000;}
 .cardPadding{padding:10px}
 .pickImg{width: 100%;    display: block;}
 .pickBlockImg{width: 30px; height: 30px; border-radius: 50px;border:1px solid #9c8686}

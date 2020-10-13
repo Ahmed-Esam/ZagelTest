@@ -1,7 +1,7 @@
 <div class="container">
   <div class="rowFlex">
     <div class="col-lg-8">
-      <div  *ngFor="let post of posts">
+      <div  *ngFor="let post of news">
         <!-- News Cards -->
         <div class="newscardsBlock" *ngIf="post.ID != 0">
           <a routerLink="/news/{{post.ID}}" routerLinkActive="active">
@@ -29,12 +29,12 @@
 
         <div class="" *ngIf="post.ID == 0 && post.Type == 0">
           <!-- Matches widjet -->
-          <div class="matchescardsBlock" *ngIf="post.MatchToDay !== null " >
+          <div class="matchescardsBlock" *ngIf="post.MatchToDay !== null " style="height: 400px;overflow: hidden;">
             <div class="rowFlex justify-content-between">
               <p>زاجل سبورت</p>
               <img src="assets/images/search-icon.png" alt="">
             </div>
-            <div class="zagelsportCard" id={{indexOfelement}} *ngFor="let match of post.MatchToDay ; let indexOfelement=index;">
+            <div class="zagelsportCard" *ngFor="let match of post.MatchToDay">
               <div class="rowFlex">
                 <div class="matcheswidjetCard">
                   <img src="https://img.thezagelapp.com/{{match.HomeTeamLogo}}"  class="zagelsportImg" alt="..." title=""/>
@@ -42,26 +42,13 @@
                 </div>
                 <div class="matchedetailsCard">
                   <p class="matchLeagueName">{{match.LeagueName}}</p>
-                  <!-- <p>{{today | date:'medium'}}</p> -->
-                  {{match.MatchDate}}
+                  <p>{{today | date:'medium'}}</p>
                   <div class="row cardtitleGoals">
                     <p class="matchHomeGoals">{{match.HomeGoals}}</p>
                     <p class="matchVS">VS</p>
                     <p class="matchHomeGoals">{{match.AwayGoals}}</p>
                   </div>
-                  <!-- <div *ngIf="ahmed  else elseBlock">
-                    <p class="MatchStatusName" >{{EndMatch}}</p>
-                  </div>
-                  <ng-template #elseBlock>
-                    <p class="MatchStatusName" >{{StartMatch}}</p>
-                  </ng-template> -->
-
-                  <!-- <div *ngIf="ahmed ? EndMatch : StartMatch">
-                    <p class="MatchStatusName" >{{StartMatch}}</p>
-                  </div> -->
-                  <!-- <p class="MatchStatusName" >{{EndMatch}}</p> -->
-                  <p class="MatchStatusName">{{test2(match.MatchDate)}}</p>
-
+                  <p class="MatchStatusName">{{match.MatchStatusName}}</p>
                 </div>
                 <div class="matcheswidjetCard">
                   <img src="https://img.thezagelapp.com/{{match.AwayTeamLogo}}"  class="zagelsportImg" alt="..." title=""/>
@@ -77,7 +64,7 @@
               <img src="assets/images/search-icon.png" alt="">
             </div>
             <div class="rowFlex">
-              <div  class="swiper-container picksContainer" [swiper]="config2" [(index)]="index">
+              <div  class="swiper-container picksContainer" [swiper]="config2" >
                 <div class="swiper-wrapper">
                   <div class="picksCard swiper-slide" *ngFor="let pick of post.Picks">
                     <img src="https://img.thezagelapp.com/{{pick.Img}}"  class="card-img-top" alt="..." title=""/>
@@ -157,6 +144,7 @@
           <!-- RecommendedSource -->
           <div *ngIf="post.RecommendedSource !== null" hidden>
             RecommendedSource
+
           </div>
           <!-- ads -->
           <div *ngIf="post.UnitID !== null ">
@@ -171,4 +159,3 @@
       </div>
   </div>
 </div>
-

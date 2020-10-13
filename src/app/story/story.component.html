@@ -1,15 +1,18 @@
-
-
-  <div class="storycontainerPosition">
+ <div class="storycontainerPosition">
     <div class="container" style="position: relative;">
     <div  class="swiper-container storyContainer" [swiper]="config1" >
       <div class="swiper-wrapper">
         <div class="swiper-slide" *ngFor="let story of stories">
-          <div class="storyblockCircle">
-            <a href="{{story.DomainURL}}">
+          <!-- <div class="storyblockCircle">
+            <a  routerLink="/source/{{story.ID}}">
                <img src="https://img.thezagelapp.com/{{story.ImgURl}}" alt="">
             </a>
-          </div>
+          </div> -->
+          <a routerLink="/source/{{story.ID}}" style="display: block;">
+            <div class="storyblockCircle">
+              <img src="https://img.thezagelapp.com/{{story.ImgURl}}" alt="">
+            </div>
+          </a>
         </div>
       </div>
       <!-- <div class="swiper-slide" *ngFor="let story of stories">

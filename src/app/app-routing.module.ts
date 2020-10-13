@@ -4,6 +4,8 @@ import { ExploreComponent } from './explore/explore.component';
 import { HomeComponent } from './home/home.component';
 import { NewsComponent } from './news/news.component';
 import { LoginComponent } from './login/login.component';
+import { SourceComponent } from './source/source.component';
+import { SectionComponent } from './section/section.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -11,6 +13,9 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'news/:id', component: NewsComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'source/:Sourceid', component: SourceComponent },
+  { path: 'section/:Sourceid/:sectionid', component: SectionComponent },
+
 ];
 
 @NgModule({

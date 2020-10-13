@@ -18,6 +18,8 @@ import { LoginComponent } from './login/login.component';
 import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
 import { GoogleLoginProvider, FacebookLoginProvider} from 'angularx-social-login';
 import { CookieService } from 'ngx-cookie-service';
+import { SourceComponent } from './source/source.component';
+import { SectionComponent } from './section/section.component';
 
 
 @NgModule({
@@ -29,7 +31,9 @@ import { CookieService } from 'ngx-cookie-service';
     FooterComponent,
     ExploreComponent,
     NewsComponent,
-    LoginComponent
+    LoginComponent,
+    SourceComponent,
+    SectionComponent
   ],
   imports: [
     BrowserModule,

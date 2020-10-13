@@ -4,18 +4,26 @@
       <div  *ngFor="let post of posts">
         <!-- News Cards -->
         <div class="newscardsBlock" *ngIf="post.ID != 0">
-          <img src="https://img.thezagelapp.com/{{post.Img}}"  class="card-img-top" alt="..." title=""/>
+          <a routerLink="/news/{{post.ID}}" routerLinkActive="active">
+            <img src="https://img.thezagelapp.com/{{post.Img}}"  class="card-img-top" alt="..." title=""/>
+          </a>
           <div class="card-body">
             <div class="imgSource-icon d-flex justify-content-between">
               <div class="imgSource">
-                <img style="width: 30px;" src="https://img.thezagelapp.com/img/source/{{post.SourceID}}.jpg"  alt="" title=""/>
+                <a routerLink="/source/{{post.SourceID}}">
+                 <img style="width: 30px;" src="https://img.thezagelapp.com/img/source/{{post.SourceID}}.jpg"  alt="" title=""/>
+                </a>
               </div>
               <div class="card-icon">
                 <i class="fa fa-upload" aria-hidden="true"></i>
                 <i class="fa fa-comments" aria-hidden="true"></i>
               </div>
             </div>
-            <h3 class="card-title" [class]="post.TitleAlign">{{ post.Title }}</h3>
+            <h3 class="card-title" [class]="post.TitleAlign">
+              <a routerLink="/news/{{post.ID}}" routerLinkActive="active">
+                {{ post.Title }}
+              </a>
+            </h3>
           </div>
         </div>
 
@@ -134,7 +142,7 @@
             </div>
           </div>
           <!-- RecommendedSource -->
-          <div *ngIf="post.RecommendedSource !== null ">
+          <div *ngIf="post.RecommendedSource !== null" hidden>
             RecommendedSource
 
           </div>

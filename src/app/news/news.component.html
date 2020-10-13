@@ -1,11 +1,3 @@
-
-
-<!-- {{article.Breif}} -->
-
-
-
-
-
 <div class="container" style="background-color: #EAEAEA;">
   <div class="row">
      <div class="Image-news w-100">
@@ -13,14 +5,22 @@
      </div>
      <div class="Source-Topic">
         <div class="Source-date">
-          <img class="img-Source" src="https://img.thezagelapp.com/img/source/{{news.SourceID}}.jpg">
+          <div>
+            <a routerLink="/source/{{news.SourceID}}">
+              <img class="img-Source" src="https://img.thezagelapp.com/img/source/{{news.SourceID}}.jpg">
+            </a>
+          </div>
           <div class="Title-Date">
             <p>{{news.SourceTitle}}</p>
             <p>{{news.FormatedDate}}</p>
           </div>
         </div>
-        <div class="Topic-Name">
-          <span>{{news.SectionTitle}}</span>
+        <div class="Topic-Name rowFlex">
+          <div>
+            <a routerLink="/section/{{news.SourceID}}/{{news.SectionID}}">
+              <span>{{news.SectionTitle}}</span>
+            </a>
+          </div>
           <i class="fa fa-heart" aria-hidden="true"></i>
         </div>
      </div>
