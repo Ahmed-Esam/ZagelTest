@@ -8,10 +8,6 @@ import { SwiperOptions } from 'swiper';
   templateUrl: './source.component.html',
   styleUrls: ['./source.component.css']
 })
-<<<<<<< HEAD
-
-=======
->>>>>>> 7e5ad17f0180bd343f42ac5d44102e60b3a7b13d
 export class SourceComponent implements OnInit {
   config2: SwiperOptions = {
     direction: 'horizontal',
@@ -71,11 +67,7 @@ slidesPerView: 1
     paramId;
     IntializeId(){
       this.route.paramMap.subscribe(params => {
-<<<<<<< HEAD
         this.paramId = params.get('Sourceid')
-=======
-        this.paramId = params.get('id')
->>>>>>> 7e5ad17f0180bd343f42ac5d44102e60b3a7b13d
         console.log(this.paramId)
       });
     }
@@ -88,19 +80,6 @@ slidesPerView: 1
       })
     }
 
-<<<<<<< HEAD
-=======
-    // getSources(){
-    //   this.postsDetails.getSource(this.UserID,this.Source,this.Section).subscribe( res => {
-    //     // console.log(res);
-    //       this.posts = res;
-    //   },err => {
-    //     console.log(err);
-    //   })
-    // }
-
-
->>>>>>> 7e5ad17f0180bd343f42ac5d44102e60b3a7b13d
   ngOnInit(): void {
     this.IntializeId()
     this.fetchApitest(this.paramId)
