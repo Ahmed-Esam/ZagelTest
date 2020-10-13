@@ -4,6 +4,7 @@
       <div  *ngFor="let post of news">
         <!-- News Cards -->
         <div class="newscardsBlock" *ngIf="post.ID != 0">
+<<<<<<< HEAD
           <a routerLink="/news/{{post.ID}}" routerLinkActive="active">
             <img src="https://img.thezagelapp.com/{{post.Img}}"  class="card-img-top" alt="..." title=""/>
           </a>
@@ -14,16 +15,30 @@
                  <img style="width: 30px;" src="https://img.thezagelapp.com/img/source/{{post.SourceID}}.jpg"  alt="" title=""/>
                 </a>
               </div>
+=======
+          <img src="https://img.thezagelapp.com/{{post.Img}}"  class="card-img-top" alt="..." title=""/>
+          <div class="card-body">
+            <div class="imgSource-icon d-flex justify-content-between">
+              <a routerLink="/source/{{post.SourceID}}">
+                <div class="imgSource">
+                  <img style="width: 30px;" src="https://img.thezagelapp.com/img/source/{{post.SourceID}}.jpg"  alt="" title=""/>
+                </div>
+              </a>
+>>>>>>> 7e5ad17f0180bd343f42ac5d44102e60b3a7b13d
               <div class="card-icon">
                 <i class="fa fa-upload" aria-hidden="true"></i>
                 <i class="fa fa-comments" aria-hidden="true"></i>
               </div>
             </div>
+<<<<<<< HEAD
             <h3 class="card-title" [class]="post.TitleAlign">
               <a routerLink="/news/{{post.ID}}" routerLinkActive="active">
                 {{ post.Title }}
               </a>
             </h3>
+=======
+            <h3 class="card-title" [class]="post.TitleAlign">{{ post.Title }}</h3>
+>>>>>>> 7e5ad17f0180bd343f42ac5d44102e60b3a7b13d
           </div>
         </div>
 
@@ -142,7 +157,11 @@
             </div>
           </div>
           <!-- RecommendedSource -->
+<<<<<<< HEAD
           <div *ngIf="post.RecommendedSource !== null" hidden>
+=======
+          <div *ngIf="post.RecommendedSource !== null ">
+>>>>>>> 7e5ad17f0180bd343f42ac5d44102e60b3a7b13d
             RecommendedSource
 
           </div>
@@ -159,3 +178,7 @@
       </div>
   </div>
 </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7e5ad17f0180bd343f42ac5d44102e60b3a7b13d
