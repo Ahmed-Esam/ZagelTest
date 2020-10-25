@@ -63,6 +63,9 @@ slidesPerView: 1
   Details:any;
   ZagelGeneral:any;
 
+  MemberID  : any = 0;
+  TimeStamp: any = 0;
+
   constructor(private postsDetails: apiService,private route: ActivatedRoute , private router:Router) { }
 
     paramId;
@@ -74,12 +77,9 @@ slidesPerView: 1
         console.log(this.route)
       });
     }
-    fetchApitest(Source,Section){
-      return this.articles = this.postsDetails.getSection(Source,Section).subscribe((res:any) =>{
+    fetchApitest(source,section){
+      return this.articles = this.postsDetails.getExplorernews(this.MemberID,source,section,this.TimeStamp).subscribe((res:any) =>{
         this.news = res;
-        //console.log(this.news)
-
-
       })
     }
 

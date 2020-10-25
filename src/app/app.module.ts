@@ -20,6 +20,8 @@ import { GoogleLoginProvider, FacebookLoginProvider} from 'angularx-social-login
 import { CookieService } from 'ngx-cookie-service';
 import { SourceComponent } from './source/source.component';
 import { SectionComponent } from './section/section.component';
+import { NewsCardComponent } from './sheard/news-card/news-card.component';
+import { MatchesWidjetComponent } from './sheard/matches-widjet/matches-widjet.component';
 
 
 @NgModule({
@@ -33,7 +35,9 @@ import { SectionComponent } from './section/section.component';
     NewsComponent,
     LoginComponent,
     SourceComponent,
-    SectionComponent
+    SectionComponent,
+    NewsCardComponent,
+    MatchesWidjetComponent
   ],
   imports: [
     BrowserModule,
