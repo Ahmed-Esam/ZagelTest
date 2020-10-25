@@ -78,8 +78,6 @@ slidesPerView: 1
       return this.articles = this.postsDetails.getSection(Source,Section).subscribe((res:any) =>{
         this.news = res;
         //console.log(this.news)
-
-
       })
     }
 

@@ -8,7 +8,7 @@ import * as moment from 'moment';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent  implements OnInit  {
+export class HomeComponent  implements OnInit   {
   config2: SwiperOptions = {
     direction: 'horizontal',
     slidesPerView: 2,
@@ -61,17 +61,21 @@ UserID:Number = 3574
 Source:Number = 0;
 Section:Number = 0
 
-constructor(postsDetails: apiService) {
-  postsDetails.getHomenews().subscribe( res => {
-    //console.log(res);
-      this.posts = res;
-      this.MatchDate = res[1].MatchToDay;
-      console.log('object :>> ', this.posts,this.Source);
-      // console.log(this.MatchDate ,'ahmed');
+constructor(private postsDetails: apiService) {
 
-    },err => {
-      console.log(err);
-    })
+  }
+
+  getApiHome(){
+    return this.postsDetails.getHomenews().subscribe( res => {
+      //console.log(res);
+        this.posts = res;
+        this.MatchDate = res[1].MatchToDay;
+        // console.log('object :>> ', this.posts,this.Source);
+        // console.log(this.MatchDate ,'ahmed');
+
+      },err => {
+        console.log(err);
+      })
   }
 
   // "MMMM Do YYYY, h:mm:ss a"
@@ -92,14 +96,16 @@ constructor(postsDetails: apiService) {
     }
   }
 
-  // clickme(e){
-  //   this.SourceID = e;
-  //   console.log(this.SourceID)
-  // }
+
   ngOnInit (){
     // this.test2(e)
+    this.getApiHome()
   }
 
+//  ngDoCheck(){
+//     this.getApiHome()
+//     console.log('ngDoCheck')
+//   }
 
 
 

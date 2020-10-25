@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class apiService {
+  SearchWordApi:any;
 
   constructor(private http: HttpClient) { }
 
@@ -54,5 +55,12 @@ export class apiService {
       const body = {Email:`${email}`,Password:'',DeviceType:'',DeviceToken:'',RegistrationType:`${Google}`,SocialId:`${user_id}`};
       return this.http.post<any>('http://apitest.thezagelapp.com/api/Member/Registration',body, { headers })
     }
+
+    getSearch(){
+      const headers = { 'Content-type':'application/json', 'DeviceToken':'62447fb2f241da48', 'AuthToken':'AKQi8yzdDa' }
+      const body = {AllWords:`${this.SearchWordApi}`,Take:20,TimeStamp:0,MemberID:3574,SectionID:0,SourceID:0 ,Type:1};
+      return this.http.post<any>('http://apitest.thezagelapp.com/api/News/Search',body, { headers })
+    }
+
 
 }

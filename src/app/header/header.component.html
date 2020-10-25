@@ -12,7 +12,19 @@
         </a>
       </div>
       <div class="searchBlock">
-        <img src="assets/images/search-icon.png" alt="">
+        <img (click)='OpenSearch()' src="assets/images/search-icon.png" alt="">
+        <!-- <a routerLink="/Search">
+          <img src="assets/images/search-icon.png" alt="">
+        </a> -->
+      </div>
+      <div [ngClass]="isActive ? 'OpenSearch': 'CloseSearch'">
+        <form class="form-inline  divSearchHeader">
+          <span class="closeBtn" (click)='OpenSearch()' ><i class="fa fa-times" aria-hidden="true"></i></span>
+          <input #Word (keydown.enter)="$event.preventDefault()"  class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <a routerLink="/Search" (click)='OpenSearch()' >
+            <button  class="btn btn-outline-success my-2 my-sm-0 mr-1" type="button" (click)='getSearch(Word.value);savelocalStorage()'>Search</button>
+          </a>
+        </form>
       </div>
     </div>
   </div>
