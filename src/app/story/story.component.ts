@@ -1,5 +1,5 @@
-
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { apiService } from 'src/app/services/api.service';
 import { SwiperOptions } from 'swiper';
 
@@ -8,19 +8,19 @@ import { SwiperOptions } from 'swiper';
   templateUrl:'./story.component.html',
   styleUrls: ['./story.component.css']
 })
-export class StoryComponent implements OnInit {
+export class StoryComponent implements OnInit   {
   config1: SwiperOptions = {
             direction: 'horizontal',
-            slidesPerView: 1,
-            slideToClickedSlide: true,
+            slidesPerView: 17,
+            // slideToClickedSlide: true,
             mousewheel: true,
             watchSlidesProgress: false,
             keyboard: true,
             centeredSlides: false,
             loop: false,
-            roundLengths: true,
-            slidesOffsetBefore: 0,
-            slidesOffsetAfter: 0,
+            roundLengths: false,
+            // slidesOffsetBefore: 0,
+            // slidesOffsetAfter: 0,
             spaceBetween: 5,
             observer:true,
     autoplay: {
@@ -50,20 +50,34 @@ export class StoryComponent implements OnInit {
     },
   };
 
-  stories: any[];
-  constructor(postsDetails: apiService) {
-    postsDetails.getStories().subscribe( res => {
-      // console.log(res);
+
+  stories:any;
+  getApiStory:any;
+
+  constructor(private postsDetails: apiService,private route: ActivatedRoute , private router:Router) {}
+
+  getStory(){
+    return this.getApiStory =  this.postsDetails.getStories().subscribe( res => {
         this.stories = res;
-        // console.log('object :>> ', this.stories);
-    },err => {
-      console.log(err);
+        // console.log('stories :>> ', this.stories);
     })
+  }
 
-    }
 
-  ngOnInit(): void {
+  ClickMe(eID){
+    // console.log(this.router.navigate([`/source/`], { relativeTo: this.route }))
+    this.router.navigateByUrl(`/source/${eID}`, { skipLocationChange: true }).then((res) => {
+      this.router.navigate([`/source/${eID}`]);
+  });
+
+    // this.router.navigate(['../list'], { relativeTo: this.route });
+  }
+
+  ngOnInit(){
+    this.getStory()
 
   }
+
+
 
 }

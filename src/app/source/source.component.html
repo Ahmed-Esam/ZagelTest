@@ -3,9 +3,9 @@
     <div class="col-lg-8">
       <div  *ngFor="let post of news">
         <!-- News Cards -->
-        <div class="newscardsBlock" *ngIf="post.ID != 0">
-          <a routerLink="/news/{{post.ID}}" routerLinkActive="active">
-            <img src="https://img.thezagelapp.com/{{post.Img}}"  class="card-img-top" alt="..." title=""/>
+        <div class="newscardsBlock" *ngIf="post.ID != 0" >
+          <a routerLink="/news/{{post.ID}}"  routerLinkActive="active">
+            <img  src="https://img.thezagelapp.com/{{post.Img}}"  class="card-img-top" alt="..." title=""/>
           </a>
           <div class="card-body">
             <div class="imgSource-icon d-flex justify-content-between">

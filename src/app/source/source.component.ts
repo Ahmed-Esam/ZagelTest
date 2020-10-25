@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { apiService } from 'src/app/services/api.service';
 import { SwiperOptions } from 'swiper';
 
@@ -8,7 +8,7 @@ import { SwiperOptions } from 'swiper';
   templateUrl: './source.component.html',
   styleUrls: ['./source.component.css']
 })
-export class SourceComponent implements OnInit {
+export class SourceComponent implements OnInit    {
   config2: SwiperOptions = {
     direction: 'horizontal',
     slidesPerView: 3,
@@ -61,8 +61,27 @@ slidesPerView: 1
   news: any;
   Details:any;
   ZagelGeneral:any;
+  postID = {
+    SourceID:'',
+    ID:'',
+    Img:'',
+    SectionTitle:'',
+    SourceTitle:'',
+    Title:'',
+  };
+  constructor(private postsDetails: apiService,private route: ActivatedRoute , private router:Router) {
+         // override the route reuse strategy
+       this.router.routeReuseStrategy.shouldReuseRoute = () => { return false }
 
-  constructor(private postsDetails: apiService,private route: ActivatedRoute , private router:Router) { }
+       this.router.events.subscribe((evt) => {
+          if (evt instanceof NavigationEnd) {
+             // trick the Router into believing it's last link wasn't previously loaded
+             this.router.navigated = false;
+             // if you need to scroll back to top, here is the right place
+             window.scrollTo(0, 0);
+          }
+      });
+  }
 
     paramId;
     IntializeId(){
@@ -74,16 +93,27 @@ slidesPerView: 1
     fetchApitest(source){
       return this.articles = this.postsDetails.getSource(source).subscribe((res:any) =>{
         this.news = res;
-        console.log(this.news)
-
-
+        // this.postID = this.news
+        // this.articles .unsubscribe()
+        console.log(this.news, 'postID')
+        // this.router.navigateByUrl(`/source/${source}`, { skipLocationChange: true })
       })
     }
+
+
+  clickkMe(eID){
+    console.log(eID)
+  }
 
   ngOnInit(): void {
     this.IntializeId()
     this.fetchApitest(this.paramId)
     // this.getSources()
   }
+
+
+
+
+
 
 }

@@ -80,6 +80,7 @@ slidesPerView: 1
     fetchApitest(source,section){
       return this.articles = this.postsDetails.getExplorernews(this.MemberID,source,section,this.TimeStamp).subscribe((res:any) =>{
         this.news = res;
+        //console.log(this.news)
       })
     }
 

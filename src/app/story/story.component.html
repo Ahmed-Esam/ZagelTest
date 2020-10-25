@@ -4,11 +4,11 @@
       <div class="swiper-wrapper">
         <div class="swiper-slide" *ngFor="let story of stories">
           <!-- <div class="storyblockCircle">
-            <a  routerLink="/source/{{story.ID}}">
+            <a  routerLink="/source/{{story.ID}}" (click)='ClickMe(story.ID)'>
                <img src="https://img.thezagelapp.com/{{story.ImgURl}}" alt="">
             </a>
           </div> -->
-          <a routerLink="/source/{{story.ID}}" style="display: block;">
+          <a routerLink="/source/{{story.ID}}" style="display: block;z-index: 9999;">
             <div class="storyblockCircle">
               <img src="https://img.thezagelapp.com/{{story.ImgURl}}" alt="">
             </div>
