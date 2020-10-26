@@ -46,7 +46,7 @@ header{height: auto; background:#F5F5F5;width: 100%;display: block;}
 .userIcon{background:#095EAB;width: 54px; height: 55px;border-radius: 27px;}
 .zagelmainLogo{display: block;width: calc(100% - 75px);text-align: center;}
 .zagelmainLogo img{margin-top: 12px;}
-.searchBlock{width: 20px;height: 20px;margin-top:18px}
+.searchBlock{width: 20px;height: 20px;margin-top:18px;cursor: pointer;}
 /* stories */
 .storycontainerPosition{position: relative; background: #fff;padding: 15px 0;margin-bottom: 25px;}
 .storycontainerPosition .swiper-button-next, .storycontainerPosition .swiper-button-prev {outline:none!important;}
