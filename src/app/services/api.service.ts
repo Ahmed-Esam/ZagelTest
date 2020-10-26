@@ -10,6 +10,7 @@ export class apiService {
 
   constructor(private http: HttpClient) { }
 
+
   getStories () :Observable<any>{
     const headers = { 'Content-type':'application/json', 'DeviceToken':'62447fb2f241da48', 'AuthToken':'AKQi8yzdDa' }
     return this.http.get('http://apiversion10.thezagelapp.com/api/news/GetAllSource/6225/0', { headers });
@@ -25,9 +26,10 @@ export class apiService {
       return this.http.get(`http://apiversion10.thezagelapp.com/api/News/Details/6225/${id}`, { headers });
     }
     // ${UserID}/${Source}/${Section}
-    getExplorernews() :Observable<any>{
-       return this.http.get('http://apiversion10.thezagelapp.com/api/News/GetNewsHome/6225/0/0/20/0');
-    }
+    getExplorernews(MemberID,Source,Section,TimeStamp) :Observable<any>{
+    return this.http.get(`http://apiversion10.thezagelapp.com/api/News/GetNewsHome/${MemberID}/${Source}/${Section}/20/${TimeStamp}`);
+   }
+
     getSource(Source) :Observable<any>{
       return this.http.get(`http://apiversion10.thezagelapp.com/api/News/GetNewsHome/6225/${Source}/0/20/0`);
    }

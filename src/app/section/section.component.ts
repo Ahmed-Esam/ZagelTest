@@ -63,8 +63,10 @@ slidesPerView: 1
   Details:any;
   ZagelGeneral:any;
 
-  MemberID  : any = 0;
-  TimeStamp: any = 0;
+  // MemberID  : any = 0;
+  // TimeStamp: any = 0;
+  // Source: any = 0;
+  // Section: any = 0;
 
   constructor(private postsDetails: apiService,private route: ActivatedRoute , private router:Router) { }
 
@@ -78,9 +80,9 @@ slidesPerView: 1
       });
     }
     fetchApitest(source,section){
-      return this.articles = this.postsDetails.getExplorernews(this.MemberID,source,section,this.TimeStamp).subscribe((res:any) =>{
+      return this.articles = this.postsDetails.getSection(source,section).subscribe((res:any) =>{
         this.news = res;
-        //console.log(this.news)
+        console.log(this.news)
       })
     }
 
