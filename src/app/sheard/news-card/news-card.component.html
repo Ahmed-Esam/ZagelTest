@@ -38,7 +38,6 @@
           </div>
           <div class="matchedetailsCard">
             <p class="matchLeagueName">{{match.LeagueName}}</p>
-            <p>{{today | date:'medium'}}</p>
             <div class="row cardtitleGoals">
               <p class="matchHomeGoals">{{match.HomeGoals}}</p>
               <p class="matchVS">VS</p>
@@ -60,7 +59,7 @@
         <img src="assets/images/search-icon.png" alt="">
       </div>
       <div class="rowFlex">
-        <div  class="swiper-container picksContainer" [swiper]="config2" [(index)]="index">
+        <div  class="swiper-container picksContainer" [swiper]="config2" >
           <div class="swiper-wrapper">
             <div class="picksCard swiper-slide" *ngFor="let pick of post.Picks">
               <img src="https://img.thezagelapp.com/{{pick.Img}}"  class="card-img-top" alt="..." title=""/>

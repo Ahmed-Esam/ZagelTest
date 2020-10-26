@@ -13,11 +13,6 @@ export class HeaderComponent implements OnInit {
   posts:any;
 
   OpenSearch(){
-    // if(!this.isActive){
-    //   this.isActive = true
-    // }else {
-    //   this.isActive = false
-    // }
     this.isActive = !this.isActive;
     console.log(this.isActive)
   }
@@ -29,14 +24,6 @@ export class HeaderComponent implements OnInit {
   getSearch(Word){
      this.apiSearch.SearchWordApi = Word;
      console.log(this.apiSearch.SearchWordApi , 'Header')
-    // return this.apiSearch.getSearch().subscribe(res => {
-    //   this.posts = res;
-
-    //   console.log(this.posts,'header')
-    //   console.log(Word)
-    // })
-
-
   }
 
   ngOnInit(): void {
