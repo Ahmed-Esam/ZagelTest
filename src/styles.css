@@ -10,10 +10,14 @@ body { margin: 0;background:#BBBBBC}
 a{text-decoration: none!important;}
 ul{list-style: none;}
 .rowFlex{display: flex;flex-wrap: wrap;}
-.newscardsBlock{margin-bottom: 25px;border-radius: 20px;}
-.matchescardsBlock{margin-bottom: 25px;background:#F8F8F8;padding:10px;border-radius: 20px;}
+.newscardsBlock{margin-bottom: 50px;border-radius: 20px;position: relative;}
+.newscardsBlock .bgColor{position:absolute;width:100%;height:50px;right:0;top:-30px;border-radius:15px 15px 0 0;}
+.newscardsBlock .head-news{display:flex;justify-content:space-between;padding:14px 20px;align-items:center;height:25px;color:#FFF;}
+.newscardsBlock .Acard{position: relative;display: block;}
+.matchescardsBlock{margin-bottom: 25px;background:#F8F8F8;padding:10px;border-radius: 20px;position: relative;}
 .pickscardsBlock{margin-bottom: 25px;background:#F8F8F8;padding:10px;border-radius: 20px;}
-.pickscardsBlock .picksCard{background: #fff;width: calc(50% - 1%); margin-left: 2%;;}
+.pickscardsBlock .picksCard{background: #fff;width: calc(50% - 1%); margin-left: 2%;}
+.pickscardsBlock .picksCard .card-img-top{height: 250px;}
 .pickscardsBlock .picksCard:nth-child(2n + 0){margin-left: 0;}
 .prayercardsBlock{margin-bottom: 25px;background:#F8F8F8;padding:10px;border-radius: 20px;}
 .prayerBlocks{background:#fff;border-radius: 10px; margin-bottom: 10px;padding:8px 0}
@@ -30,20 +34,52 @@ ul{list-style: none;}
 .card-icon{color: rgba(187 ,187 ,188 )}
 .card-icon i:first-child{ margin-left:10px;}
 .card-icon i{font-size: 23px;}
-.imgSource{width: 30px;}
+.imgSource-right{text-align:right;display:flex;color:#BBB;}
 .card-img-top{border-radius: 14px 14px 0px 0px;}
 .card-title{font-size: 14px;margin-top: 10px;}
 .card-title{font-family:cairobold!important;}
-.card-title.C, .C{text-align: center;}
-.card-title.R, .R{text-align: right;}
+.card-title.C, .C{text-align: center;color: #095EAB;}
+.card-title.R, .R{text-align: right;margin-top: 30px;}
 .mat-h3, .mat-typography h3 a{margin-top: 15px;font-size: 17px;font-family:cairobold;color: #000;}
-.cardPadding{padding:10px}
+.cardPadding{padding:10px;position:relative;height:125px;}
+.divSlideText{position:absolute;bottom:10px;}
 .pickImg{width: 100%;    display: block;}
 .pickBlockImg{width: 30px; height: 30px; border-radius: 50px;border:1px solid #9c8686}
+.TitleSportZagel{text-align:right;width:95%;margin:10px auto 10px auto !important;color: #095EAB;}
 /* header */
 header{height: auto; background:#F5F5F5;width: 100%;display: block;}
 .headerBlock{padding:0 20px}
-.userIcon{background:#095EAB;width: 54px; height: 55px;border-radius: 27px;}
+.userIcon{width:54px;height:55px;display:flex;justify-content:center;align-items:center;}
+.userIcon i {color: #095EAB;cursor: pointer;}
+.OpenMenu{width:100%;background-color:#CCC;position: fixed;;z-index:99999;right:0;left:0;top:0;bottom:0;}
+.menu {display: flex;height: 100%;}
+.menu .RightMenu{width: 50%;background-color: #EAEAEA;}
+.menu .LeftMenu{width:50%;background-color:#095EAB}
+.menu .LeftMenu .logoMenu img{max-width:100%;display:block;margin:20% auto 0;}
+.menu .LeftMenu .FollowUp .TitleFollow{padding-right: 9%;color:#FFF;text-align:right;font-weight:bold;position: relative;}
+.menu .LeftMenu .FollowUp .TitleFollow::after{content:'';position:absolute;right:0;top:10px;width:8%;height:1px;background-color:#FFF;}
+.social-media{display: flex;position: relative;}
+/* .social-media::after{content:'';position:absolute;left:0;top:50%;width:63%;height:1px;background-color:#FFF;} */
+.social-media .social-media-li{color:#FFF;margin:0 10px;border:1px solid #FFF;border-radius:50%;width:50px;height:50px;text-align:center;line-height:3.5;}
+.social-media li:last-child{position:absolute;left:0;top:50%;width:calc(100% - 250px);height:1px;background-color:#FFF;}
+.list-contact-us{display:flex;flex-direction:column;text-align:right;color:#095EAB;padding: 0;}
+.list-contact-us li {margin: 5px 0;background-color:#EAEAEA;padding: 10px 60px;}
+.list-contact-us li i {margin: 5px;}
+
+.menu .RightMenu .TitleMenu{background-color:#095EAB;text-align:right;color:#FFF;padding: 10px 15% 10px;}
+.menu .RightMenu .TitleMenu i {margin:  0 5px;}
+.menu .RightMenu .CloseBtnMenu{text-align:center;width:30px;height:39px;background-color:#095EAB;margin:0 20px 10px;border-radius:0 0 20px 20px;}
+.menu .RightMenu .CloseBtnMenu i{font-size:20px;line-height:2;color: #FFF;cursor: pointer;}
+.menu .RightMenu .Content-List-Menu .TitleList{text-align: right;padding-right:18%;position: relative;color: #095EAB;margin:0 0 20px;}
+.menu .RightMenu .Content-List-Menu .TitleList::after{content:'';position:absolute;right:0;top:10px;width:18%;height:1px;background-color:#095EAB;}
+.listMenu{display:flex;flex-wrap:wrap;width:80%;margin:auto;}
+.listMenu li{text-align: right;width: calc((100% -10px) / 5);}
+.ImgListMenu{border:1px solid #095EAB;border-radius:50%;width:50px;height:50px;display:flex;margin:auto;}
+.btnAll{background-color: #095EAB;color: #FFF; border:1px solid;border-radius:50%;width:50px;height:50px;display:flex;margin:auto;justify-content:center;align-items:center;}
+.ImgListMenu img { max-width: 100%;display: block;width: 100%;margin: auto;border-radius: 50%;}
+.listMenu p {text-align: center;margin-top: 10px;}
+.CloseMenu{display: none;}
+
 .zagelmainLogo{display: block;width: calc(100% - 75px);text-align: center;}
 .zagelmainLogo img{margin-top: 12px;}
 .searchBlock{width: 20px;height: 20px;margin-top:18px;cursor: pointer;}
@@ -58,25 +94,41 @@ header{height: auto; background:#F5F5F5;width: 100%;display: block;}
 .zagelsportImg{max-width: 35px;display: block; margin:auto;}
 .matcheswidjetCard{width: 30%;padding-top:20px}
 .matchedetailsCard{width: 40%;    text-align: center;}
-.MatchStatusName{border:1px solid #095EAB;padding:5px;max-width: 100px;margin: auto!important;border-radius: 50px;}
+.MatchStatusName{color:#095EAB; border:1px solid #095EAB;padding:5px;max-width: 100px;margin: auto!important;border-radius: 50px;}
 .cardtitleGoals{max-width: 120px;margin:auto;justify-content: space-between;margin-top: 10px;}
 .matchHomeGoals{font-size:1.5em;color:#095EAB;}
 .matchVS{font-size:1.5em;color:#095EAB;margin:0 12px}
-.matchLeagueName{font-size:1em;color:#095EAB;}
+.matchLeagueName{font-size:1em;color:#095EAB;text-align:right;width:95%;margin:10px auto 10px auto!important;font-weight: bold;}
+.matchFormatedDate{font-size:1em;color:#095EAB;text-align:center;}
+.btnMore{position:absolute;bottom:10px;width:100%;display:block;color:#095EAB;font-weight:bold}
+.OpenMore{height: 100%;padding-bottom: 50px;}
+.CloseMore{height:460px;overflow:hidden;}
+.CloseMore .SportCard:nth-child(3){padding-bottom: 40px;}
+.IconNewscog {position: relative;}
+.IconNewscog i {cursor: pointer;}
+.IconNewscog .dropdownNews{ position:absolute;left:0;width:100px;z-index:999;background-color:#FFF;color:#000;padding:10px 20px;border-radius:10px;}
+.IconNewscog .dropdownNews p {margin: 0;}
+.OpenNewscog{display: block;}
+.CloseNewscog  .dropdownNews{display: none;}
+.divtemplate{text-align: center; padding: 20px;color: #FFF;}
+
+.newscardsBlock .showDiv{display: block;}
+.newscardsBlock .hiddenDiv{display: none;}
+
 
 /* News  */
 .NewsImg{width: 100%;display: block;}
 .Source-Topic{display:flex;justify-content:space-between;width:100%;padding:10px 20px;position: relative;}
 .Source-Topic::before{content:'';position:absolute;top:-10px;background-color:#095EAB;width:100%;height:10px;right:0;border-radius:100px 100px 0 0;}
 .Source-date{display:flex;text-align:right;align-items:center}
-.img-Source{width: 80px;margin-left: 10px;}
+.img-Source{margin-left:10px;border-radius:50px;padding:1px;background:#BBB;width:50px;height:50px;}
 .Title-Date p:last-child{margin:0;}
 .Topic-Name span{margin-left: 6px;}
 .ZagelGeneral{margin: 10px 0;}
 .Post-Quare{margin-bottom: 25px;background:#F8F8F8;padding:10px;border-radius: 20px;}
 .contentBlockText{text-align: right;line-height: 1.7; font-size: 16px;}
-
-
+.imgSource-icon .SourceTitle{color: #BBB;}
+.imgSource-icon .SourceTitle p {margin-bottom: 10px;}
 
 /* sign in FORM */
 #logreg-forms{
@@ -84,7 +136,7 @@ header{height: auto; background:#F5F5F5;width: 100%;display: block;}
   margin:10vh auto;
   background-color:#f3f3f3;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 #logreg-forms form {
   width: 100%;
@@ -151,38 +203,55 @@ transition: all 0.3s cubic-bezier(.25,.8,.25,1);
   margin: 0 auto;
 }
 
+
+.Breaking-news{background-color:#A81A28}
+.Sports{background-color:#0D625B}
+.art{background-color:#F1D32D}
+.Arabs-world{background-color:#0A86C4}
+.Economie{background-color:#3EB5ED}
+.science-technology{background-color:#0363AF}
+.Investigations-dialogues{background-color:#88B040}
+.Women-Miscellaneous{background-color: #C697E0}
+.Saw-articles{background-color:#4AAA9F}
+.accidents{background-color:#A81A28}
+.Health-Medicine{background-color:#D1B315}
+.Cars{background-color:#D69328}
+.tourism{background-color:#CC3D49}
+
+
+
 /* Mobile */
 
 @media screen and (max-width:500px){
   #logreg-forms{
-      width:300px;
+    width:300px;
   }
 
   #logreg-forms  .social-login{
-      width:200px;
-      margin:0 auto;
-      margin-bottom: 10px;
+    width:200px;
+    margin:0 auto;
+    margin-bottom: 10px;
   }
   #logreg-forms  .social-btn{
-      font-size: 1.3rem;
-      font-weight: 100;
-      color:white;
-      width:200px;
-      height: 56px;
+    font-size: 1.3rem;
+    font-weight: 100;
+    color:white;
+    width:200px;
+    height: 56px;
 
   }
   #logreg-forms .social-btn:nth-child(1){
-      margin-bottom: 5px;
+    margin-bottom: 5px;
   }
   #logreg-forms .social-btn span{
-      display: none;
+    display: none;
   }
   #logreg-forms  .facebook-btn:after{
-      content:'Facebook';
+    content:'Facebook';
   }
 
   #logreg-forms  .google-btn:after{
-      content:'Google+';
+    content:'Google+';
   }
 
 }

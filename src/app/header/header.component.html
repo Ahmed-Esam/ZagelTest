@@ -1,10 +1,8 @@
 <header>
   <div class="container">
     <div class="rowFlex headerBlock">
-      <div class="userIcon">
-        <a routerLink="/login" routerLinkActive="active">
-          <img src="assets/images/usericon.png" alt="">
-        </a>
+      <div class="userIcon" (click)='OpenMenu()'>
+        <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
       </div>
       <div class="zagelmainLogo">
         <a routerLink="/" routerLinkActive="active">
@@ -26,6 +24,89 @@
           </a>
         </form>
       </div>
+
+      <div [ngClass]="MenuActive ? 'OpenMenu': 'CloseMenu'">
+          <div class="menu" >
+            <div class="RightMenu">
+              <div class="CloseBtnMenu" (click)='OpenMenu()'>
+                <i class="fa fa-times" aria-hidden="true"></i>
+              </div>
+              <h4  class="TitleMenu">
+                <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                الاهتمامات
+             </h4>
+             <div class="Content-List-Menu">
+               <p class="TitleList">المواضيع</p>
+               <ul class="listMenu">
+                  <li *ngFor="let Section of AllSection">
+                    <div class="ImgListMenu">
+                      <img src="../../assets/images/football.png" alt="">
+                    </div>
+                    <p>{{Section.Title}}</p>
+                  </li>
+                  <li>
+                    <div  class="btnAll">
+                      الكل
+                    </div>
+                  </li>
+               </ul>
+             </div>
+             <div class="Content-List-Menu">
+              <p class="TitleList">المصادر</p>
+              <ul class="listMenu">
+                 <li *ngFor="let Source of AllSource">
+                   <div class="ImgListMenu">
+                     <img src="https://img.thezagelapp.com/source/{{Source.ID}}.jpg" alt="">
+                   </div>
+                   <p>{{Source.Title}}</p>
+                 </li>
+                 <li>
+                   <div  class="btnAll">
+                     الكل
+                   </div>
+                 </li>
+              </ul>
+            </div>
+            </div>
+            <div class="LeftMenu">
+              <div class="logoMenu">
+                <img src="../../assets/images/logoMenu.png" alt="">
+              </div>
+              <div class="FollowUp">
+                <h4  class="TitleFollow">
+                  لمتابعة زاجل
+               </h4>
+               <ul class="social-media">
+                  <li class="social-media-li">
+                    <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                  </li>
+                  <li class="social-media-li">
+                      <i class="fa fa-twitter" aria-hidden="true"></i>
+                  </li>
+                  <li class="social-media-li">
+                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                  </li>
+                  <li></li>
+               </ul>
+               <ul class="list-contact-us">
+                 <li>
+                    <i class="fa fa-lock" aria-hidden="true"></i>
+                    سياسة الخصوصية
+                 </li>
+                 <li>
+                    <i class="fa fa-share-square-o" aria-hidden="true"></i>
+                    مشاركة تطبيق زاجل
+                 </li>
+                 <li>
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                  تواصل معنا
+                </li>
+               </ul>
+              </div>
+            </div>
+          </div>
+      </div>
+
     </div>
   </div>
 </header>

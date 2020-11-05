@@ -55,15 +55,15 @@ MemberID  : any = 3574;
 Source: any = 0;
 Section: any = 0;
 TimeStamp: any = 0;
-
+isActive= false;
+isActiveNewscog= false;
   constructor(postsDetails: apiService) {
     postsDetails.getExplorernews(this.MemberID,this.Source,this.Section,this.TimeStamp).subscribe( res => {
-      // console.log(res);
-        this.posts = res;
+      this.posts = res;
+      console.log(this.posts);
     },err => {
       console.log(err);
     })
-
     }
     test2(e){
 
@@ -79,6 +79,29 @@ TimeStamp: any = 0;
 
       }
     }
+
+    ClickMore(){
+      this.isActive = !this.isActive;
+      console.log(this.isActive)
+    }
+
+
+    toogleIcon(){
+      this.isActiveNewscog = !this.isActiveNewscog;
+      // console.log(element)
+    }
+
+    visibleIndex = -1;
+    showSubItem(ind) {
+      if (this.visibleIndex === ind) {
+        this.visibleIndex = -1;
+        this.isActiveNewscog = false
+      } else {
+        this.visibleIndex = ind;
+        this.isActiveNewscog = true
+      }
+    }
+
   ngOnInit(): void {
   }
 

@@ -148,7 +148,7 @@ slidesPerView: 1
       this.news = res;
       this.Details = this.news.Details;
       this.ZagelGeneral = this.news.ZagelGeneral
-      // console.log(this.Details)
+      console.log(this.Details,'Details')
       // console.log(this.ZagelGeneral , "sss")
     })
   }
