@@ -7,50 +7,43 @@ import { Observable } from 'rxjs';
 })
 export class apiService {
   SearchWordApi:any;
+  proxy:string ='https://cors-anywhere.herokuapp.com/'
 
   constructor(private http: HttpClient) { }
 
 
   getStories () :Observable<any>{
-    const proxy ='https://cors-anywhere.herokuapp.com/'
     const headers = { 'Content-type':'application/json', 'DeviceToken':'62447fb2f241da48', 'AuthToken':'AKQi8yzdDa' }
-    return this.http.get(`${proxy}http://apiversion10.thezagelapp.com/api/news/GetAllSource/6225/0`, { headers });
+    return this.http.get(`${this.proxy}http://apiversion10.thezagelapp.com/api/news/GetAllSource/6225/0`, { headers });
   }
 
     getHomenews() :Observable<any>{
-      const proxy ='https://cors-anywhere.herokuapp.com/'
       const headers = { 'Content-type':'application/json', 'DeviceToken':'62447fb2f241da48', 'AuthToken':'AKQi8yzdDa' }
-      return this.http.get(`${proxy}http://apiversion10.thezagelapp.com/api/News/GetNewsHomebyuser/6225/0/0/20/0`, { headers });
+      return this.http.get(`${this.proxy}http://apiversion10.thezagelapp.com/api/News/GetNewsHomebyuser/6225/0/0/20/0`, { headers });
     }
 
     getArticle(id) :Observable<any>{
-      const proxy ='https://cors-anywhere.herokuapp.com/'
       const headers = { 'Content-type':'application/json', 'DeviceToken':'62447fb2f241da48', 'AuthToken':'AKQi8yzdDa' }
-      return this.http.get(`${proxy}http://apiversion10.thezagelapp.com/api/News/Details/6225/${id}`, { headers });
+      return this.http.get(`${this.proxy}http://apiversion10.thezagelapp.com/api/News/Details/6225/${id}`, { headers });
     }
     // ${UserID}/${Source}/${Section}
     getExplorernews(MemberID,Source,Section,TimeStamp) :Observable<any>{
-      const proxy ='https://cors-anywhere.herokuapp.com/'
-      return this.http.get(`${proxy}http://apiversion10.thezagelapp.com/api/News/GetNewsHome/${MemberID}/${Source}/${Section}/20/${TimeStamp}`);
+      return this.http.get(`${this.proxy}http://apiversion10.thezagelapp.com/api/News/GetNewsHome/${MemberID}/${Source}/${Section}/20/${TimeStamp}`);
    }
 
     getSource(Source) :Observable<any>{
-      const proxy ='https://cors-anywhere.herokuapp.com/'
-      return this.http.get(`${proxy}http://apiversion10.thezagelapp.com/api/News/GetNewsHome/6225/${Source}/0/20/0`);
+      return this.http.get(`${this.proxy}http://apiversion10.thezagelapp.com/api/News/GetNewsHome/6225/${Source}/0/20/0`);
    }
     getSection(Source,Section) :Observable<any>{
-      const proxy ='https://cors-anywhere.herokuapp.com/'
-      return this.http.get(`${proxy}http://apiversion10.thezagelapp.com/api/News/GetNewsHome/6225/${Source}/${Section}/20/0`);
+      return this.http.get(`${this.proxy}http://apiversion10.thezagelapp.com/api/News/GetNewsHome/6225/${Source}/${Section}/20/0`);
    }
 
     getPostQuare() {
-      const proxy ='https://cors-anywhere.herokuapp.com/'
-      return this.http.get(`${proxy}http://api.postquare.com/rec-api/getrecs.json?pubid=191402&webid=195147&wid=125552&url=http://www.thezagelapp.com/`)
+      return this.http.get(`${this.proxy}http://api.postquare.com/rec-api/getrecs.json?pubid=191402&webid=195147&wid=125552&url=http://www.thezagelapp.com/`)
     }
 
     getJubna() {
-      const proxy ='https://cors-anywhere.herokuapp.com/'
-      return this.http.get(`${proxy}https://jubna.com/en/api/trends/9888?api_key=b092f2e7-963cbc6c-34da8e7c-2a6dcc38&widget_id=20007`)
+      return this.http.get(`${this.proxy}https://jubna.com/en/api/trends/9888?api_key=b092f2e7-963cbc6c-34da8e7c-2a6dcc38&widget_id=20007`)
     }
 
     getgoogleAccount(Loginemail) {
@@ -67,23 +60,20 @@ export class apiService {
     }
 
     getSearch(){
-      const proxy ='https://cors-anywhere.herokuapp.com/'
       const headers = { 'Content-type':'application/json', 'DeviceToken':'62447fb2f241da48', 'AuthToken':'AKQi8yzdDa' }
       const body = {AllWords:`${this.SearchWordApi}`,Take:20,TimeStamp:0,MemberID:3574,SectionID:0,SourceID:0 ,Type:1};
-      return this.http.post<any>(`${proxy}http://apitest.thezagelapp.com/api/News/Search`,body, { headers })
+      return this.http.post<any>(`${this.proxy}http://apitest.thezagelapp.com/api/News/Search`,body, { headers })
     }
 
     getAllSection(){
-      const proxy ='https://cors-anywhere.herokuapp.com/'
       const headers = { 'Content-type':'application/json', 'DeviceToken':'62447fb2f241da48', 'AuthToken':'AKQi8yzdDa' }
-      return this.http.get<any>(`${proxy}http://apitest.thezagelapp.com/api/News/GetAllSection/3574/20`, { headers })
+      return this.http.get<any>(`${this.proxy}http://apitest.thezagelapp.com/api/News/GetAllSection/3574/20`, { headers })
     }
 
     // http://apitest.thezagelapp.com/api/News/GetAllSource/3574/0
     getAllSource(){
-      const proxy ='https://cors-anywhere.herokuapp.com/'
       const headers = { 'Content-type':'application/json', 'DeviceToken':'62447fb2f241da48', 'AuthToken':'AKQi8yzdDa' }
-      return this.http.get<any>(`${proxy}http://apitest.thezagelapp.com/api/News/GetAllSource/3574/0`, { headers })
+      return this.http.get<any>(`${this.proxy}http://apitest.thezagelapp.com/api/News/GetAllSource/3574/0`, { headers })
 
     }
 
