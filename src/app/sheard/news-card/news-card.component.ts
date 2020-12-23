@@ -96,9 +96,11 @@ isActiveNewscog= false;
       if (this.visibleIndex === ind) {
         this.visibleIndex = -1;
         this.isActiveNewscog = false
+        console.log(ind , 'ind')
       } else {
         this.visibleIndex = ind;
         this.isActiveNewscog = true
+        console.log(ind , 'ind')
       }
     }
 
