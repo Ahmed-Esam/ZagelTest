@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class apiService {
   SearchWordApi:any;
-  proxy:string ='https://cors-anywhere.herokuapp.com/'
+  proxy:string ='https://cors-anywhere.herokuapp.com/';
 
   constructor(private http: HttpClient) { }
 
