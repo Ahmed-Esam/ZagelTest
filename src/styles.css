@@ -268,3 +268,7 @@ footer{height: 65px; background: #fff;position: fixed;bottom: 0;width: 100%; dis
 .divSearch input {margin: 0 10px;}
 .divWord{padding: 20px 10px;text-align: right;margin-bottom: 10px;}
 .closeBtn{position:absolute;top:10px;right:10px;background-color:#f00;border-radius:50%;width:25px;height:20px;text-align:center;color:#FFF;cursor:pointer;}
+
+
+
+.ssss{width: 100%;height: 40px;background-color:#0A86C4;margin: 10px 0;padding: 10px 0;}

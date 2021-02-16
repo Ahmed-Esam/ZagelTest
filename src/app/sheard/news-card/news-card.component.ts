@@ -86,24 +86,49 @@ isActiveNewscog= false;
     }
 
 
-    toogleIcon(){
+    toogleIcon(element){
       this.isActiveNewscog = !this.isActiveNewscog;
-      // console.log(element)
+      // console.log(element,'element')
     }
 
     visibleIndex = -1;
-    showSubItem(ind) {
-      if (this.visibleIndex === ind) {
-        this.visibleIndex = -1;
-        this.isActiveNewscog = false
-        console.log(ind , 'ind')
-      } else {
-        this.visibleIndex = ind;
-        this.isActiveNewscog = true
-        console.log(ind , 'ind')
-      }
+      // showSubItem(ind) {
+      //   if (this.visibleIndex === ind) {
+      //     this.visibleIndex = -1;
+      //     this.isActiveNewscog = false
+      //     console.log(ind , 'ind')
+      //   } else {
+      //     this.visibleIndex = ind;
+      //     this.isActiveNewscog = true
+      //     console.log(ind , 'ind')
+      //   }
+      // }
+
+
+
+    showDivTwo:boolean = true
+    funTest(e){
+      e++
+      console.log(e)
+      var tag = document.getElementById(e)
+      tag.style.display = 'none'
+      var ddd = `show-${e}`
+      var div = document.getElementById(ddd)
+        div.style.display = 'block'
+      console.log(div,'divdivdivdiv ')
+      console.log(e)
+      console.log(e,'e',div,'div',tag,'aaaaa')
     }
 
+    BackNews(e){
+      e++
+      var tag = document.getElementById(e)
+      tag.style.display = 'block'
+      var ddd = `show-${e}`
+      var div = document.getElementById(ddd)
+      div.style.display = 'none'
+      console.log(e,tag,'sssss')
+    }
   ngOnInit(): void {
   }
 

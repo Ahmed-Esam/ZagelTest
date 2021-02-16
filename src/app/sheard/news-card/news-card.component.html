@@ -1,12 +1,12 @@
 <div *ngFor="let post of posts;let i = index" >
   <div  class="newscardsBlock bgColor" *ngIf="post.ID != 0" [ngClass]="{ 'Breaking-news':post.SectionID===1, 'Sports':post.SectionID===2, 'art':post.SectionID===3, 'Arabs-world':post.SectionID===4, 'Economie':post.SectionID===5, 'science-technology':post.SectionID===6, 'Investigations-dialogues':post.SectionID===8, 'Women-Miscellaneous':post.SectionID===9, 'Saw-articles':post.SectionID===11, 'accidents':post.SectionID===17, 'Health-Medicine':post.SectionID===18, 'Cars':post.SectionID===27, 'tourism':post.SectionID===28}">
-    <div class="calss-{{i}}" [ngClass]="i === i ? 'OpenT': 'CloseT'">
-        <div class="Div" id="{{i + 1}}" *ngIf="visibleIndex != i; else elseBlock2">
+    <div id={{i+1}} class="calss-{{i}}" [ngClass]="i === i ? 'OpenT': 'CloseT'">
+        <div class="Div" id="{{i + 1}}">
           <div class="head-news">
             <span>{{post.SectionTitle}}</span>
             <div  class="IconNewscog" (click)='toogleIcon(i)' [ngClass]="isActiveNewscog ? 'OpenNewscog': 'CloseNewscog'">
               <i class="fa fa-cog" aria-hidden="true"></i>
-              <div class="dropdownNews" (click)="showSubItem(i)">
+              <div class="dropdownNews" (click)="funTest(i)">
                 <!-- <i class="fa fa-eye-slash" aria-hidden="true"></i> -->
                 <p>اخفاء الخبر</p>
               </div>
@@ -48,12 +48,12 @@
         </div>
         </div>
     </div>
-   <ng-template #elseBlock2 >
-    <div class="divtemplate">
+   <div class="aaaaaaa" >
+    <div class="divtemplate" id='show-{{i+1}}' style="display: none;" >
       <span>تم اخقاء الخبر</span>
-      <button class="btn btn-light mr-1" (click)="showSubItem(i)">تراجع</button>
+      <button class="btn btn-light mr-1" (click)='BackNews(i)' >تراجع</button>
     </div>
-  </ng-template>
+   </div>
   <!-- <div class="divtemplate" *ngIf="visibleIndex == i">
     <span>تم اخقاء الخبر</span>
     <button class="btn btn-light mr-1" (click)="showSubItem(i)">تراجع</button>
@@ -63,6 +63,8 @@
 
 
   </div>
+
+
   <div class="" *ngIf="post.ID == 0">
     <!-- Matches widjet -->
     <div class="matchescardsBlock" *ngIf="post.MatchToDay !== null " [ngClass]="isActive ? 'OpenMore': 'CloseMore'">
